@@ -1,0 +1,95 @@
+/**=====================
+     tab css start
+==========================**/
+.tab-wrap {
+  .nav-tabs {
+    justify-content: center;
+    gap: 10px 0;
+    border-bottom: 2px solid $demo1-bg;
+
+    //.nav-item {
+    //  &:focus {
+    //    border: none;
+    //  }
+    //}
+
+    [class="dark"] & {
+      border-bottom-color: #383838;
+    }
+
+    @include mq-max(lg) {
+      display: -webkit-box;
+      justify-content: center;
+      flex-wrap: inherit;
+      //scrollbar-width: thin; /* For modern browsers */
+      //-webkit-scrollbar-width: thin; /* For older versions of Safari */
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scrollbar-width: none; /* For modern browsers */
+      -webkit-overflow-scrolling: touch; /* For older versions of Safari */
+      -ms-overflow-style: none; /* For Internet Explorer and Edge */
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 8px;
+        background-color: transparent;
+        -webkit-appearance: none;
+      }
+      ::-webkit-scrollbar:vertical {
+        -webkit-appearance: none;
+      }
+
+      ::-webkit-scrollbar:horizontal {
+        -webkit-appearance: none;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+
+    }
+
+    .nav-link {
+      cursor: pointer;
+      font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+      line-height: 1;
+      color: $font-light;
+      padding: 0 20px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 4px solid transparent;
+      text-transform: capitalize;
+
+      [class="dark"] & {
+        color: #bababa;
+      }
+
+      @include mq-max(lg) {
+        padding: 0 10px 15px;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: none;
+      }
+
+      &.active,
+      &:active {
+        border-bottom: 4px solid var(--theme-color);
+        color: $black1;
+
+        [class="dark"] & {
+          color: #efefef;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 30px;
+  }
+}

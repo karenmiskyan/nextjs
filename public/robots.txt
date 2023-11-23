@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /cdn-cgi/
+Disallow: /wp-includes/
+Disallow: /wp-admin/
+Disallow: /wp-json/
+Disallow: /portal/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /manage-projects/
+Disallow: /downloads/samsung/
+Allow: /assets/
+Allow: /catalog/
+Allow: /downloads/
+Allow: /content/
+Allow: /$

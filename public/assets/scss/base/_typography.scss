@@ -1,0 +1,573 @@
+/**=====================
+     typography css start
+==========================**/
+body {
+  font-family: $font_0, $font_1;
+  position: relative;
+  font-size: 16px;
+  color: $theme-font-color;
+  margin: 0;
+  background-color: $white;
+
+  [class="dark"] & {
+    color: #efefef;
+    background-color: #2b2b2b;
+  }
+
+  .bg-overlay {
+    @include pseudowh($width: 100vw, $height: 100vh);
+    background-color: rgba($black, 0.2);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      inset: 0;
+    }
+  }
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li {
+  display: inline-block;
+  font-size: 16px;
+}
+
+p {
+  font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+  //line-height: 18px;
+  line-height: 22px;
+}
+
+a {
+  color: var(--theme-color);
+  transition: 0.5s ease;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    transition: 0.5s ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+-close {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+.form-control {
+  background-color: $white;
+  border-radius: 0.25rem;
+  border: 1px solid $light-blue;
+
+  &:focus {
+    border: 1px solid $light-blue;
+  }
+
+  [class="dark"] & {
+    background-color: #2b2b2b;
+  }
+
+
+  &:focus {
+    box-shadow: none;
+
+    [class="dark"] & {
+      background-color: #232323;
+
+    }
+  }
+}
+
+h1 {
+  font-size: calc(40px + (70 - 40) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+h2 {
+  font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 600;
+  line-height: 1;
+  text-transform: capitalize;
+  margin: 0;
+
+  .red-font-size {
+    font-size: calc(14px + (28 - 24) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  .total-cart-details {
+    display: flex;
+    align-items: center;
+    @include mq-max(xs) {
+      display: grid;
+
+    }
+  }
+}
+
+h3 {
+  font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h4 {
+  font-size: calc(17px + (18 - 17) * ((100vw - 320px) / (1920 - 320)));
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 400;
+}
+
+span {
+  display: inline-block;
+}
+
+.theme-color {
+  color: var(--theme-color) !important;
+}
+
+.theme-bg-color {
+  background-color: var(--theme-color);
+}
+
+.backgroundstyle {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+// Loader ---------------------------------------------------------
+
+.loader {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.warp {
+  @include pseudowh($width: 500px, $height: 200px);
+  text-align: center;
+}
+
+.cart,
+.load {
+  font-size: 100px;
+  color: #e22454;
+  animation-name: spaceboots;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.icons {
+  font-size: 21px;
+  position: absolute;
+  margin-top: -51px;
+  margin-left: 249px;
+  animation-name: spaceboots;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+.bino {
+  margin-top: 75px;
+  z-index: -1;
+  margin-left: -30px;
+  transform: rotate(-20deg);
+}
+
+.book {
+  margin-top: 80px;
+  z-index: -1;
+  margin-left: -5px;
+  transform: rotate(-20deg);
+  animation-name: spaceboots;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+.case {
+  margin-top: 80px;
+  z-index: -1;
+  margin-left: -4px;
+  transform: rotate(20deg);
+}
+
+.taxi {
+  margin-top: 80px;
+  z-index: -1;
+  margin-left: -3px;
+  transform: rotate(-40deg);
+  animation-name: spaceboots;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+.cake {
+  margin-top: 0px;
+  z-index: -1;
+  margin-left: -10px;
+  transform: rotate(-100deg);
+}
+
+.load {
+  font-size: 20px;
+  margin-top: -30px;
+  margin-left: 38px;
+}
+
+.required-label {
+  &::after {
+    content: "*";
+    color: var(--theme-color);
+    font-size: 16px;
+  }
+}
+
+.authorize-col {
+  position: relative;
+  img{
+    position: absolute;
+    bottom: 12%;
+    right: 6%;
+    max-height: 26px;
+    object-fit: contain;
+    @include mq-max(sm) {
+      bottom: 6%;
+      right: 10%;
+    }
+  }
+
+}
+
+.checkout-form {
+  border-radius: 24px;
+}
+
+.password-input-container {
+  position: relative;
+
+  .password-toggle-icon {
+    position: absolute;
+    right: 10%;
+    bottom: 14%;
+  }
+}
+
+.modal-success {
+  h2 {
+    margin: 16px 0;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .first-row {
+    border-top: 1px solid #E2E5EA;
+
+  }
+
+  .orders-details {
+    border-bottom: 1px solid #E2E5EA;
+    border-left: 1px solid #E2E5EA;
+    border-right: 1px solid #E2E5EA;
+    padding: 8px 0;
+  }
+}
+
+.form-container-authorize {
+  span {
+    padding: calc(2px + 4 * (100vw - 320px) / 1600) calc(15px + 15 * (100vw - 320px) / 1600);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--theme-color);
+  }
+}
+
+.pac-container {
+  background-color: #fff;
+  position: absolute !important;
+  z-index: 3000;
+  border-radius: 2px;
+  border-top: 1px solid #d9d9d9;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden
+}
+
+.pac-logo:after {
+  content: "";
+  padding: 1px 1px 1px 0;
+  height: 16px;
+  text-align: right;
+  display: block;
+  background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 120px 14px
+}
+
+.hdpi.pac-logo:after {
+  background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png)
+}
+
+.pac-item {
+  cursor: default;
+  padding: 0 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 30px;
+  text-align: left;
+  border-top: 1px solid #e6e6e6;
+  font-size: 11px;
+  color: #999
+}
+
+.pac-item:hover {
+  background-color: #fafafa
+}
+
+.pac-item-selected,
+.pac-item-selected:hover {
+  background-color: #ebf2fe
+}
+
+.pac-matched {
+  font-weight: 700
+}
+
+.pac-item-query {
+  font-size: 13px;
+  padding-right: 3px;
+  color: #000
+}
+
+.pac-icon {
+  width: 15px;
+  height: 20px;
+  margin-right: 7px;
+  margin-top: 6px;
+  display: inline-block;
+  vertical-align: top;
+  //background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+  background-size: 34px
+}
+
+//.hdpi .pac-icon {
+//  background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)
+//}
+.pac-icon-search {
+  background-position: -1px -1px
+}
+
+.pac-item-selected .pac-icon-search {
+  background-position: -18px -1px
+}
+
+.pac-icon-marker {
+  background-position: -1px -161px
+}
+
+.pac-item-selected .pac-icon-marker {
+  background-position: -18px -161px
+}
+
+.pac-placeholder {
+  color: gray
+}
+
+.needs-validation {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  span {
+    padding: calc(2px + 4 * (100vw - 320px) / 1600) calc(15px + 15 * (100vw - 320px) / 1600);
+    font-weight: 500;
+    font-size: 14px;
+    color: $white;
+    //&:hover {
+    //  color: var(--theme-color);
+    //
+    //}
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .product-your-interest {
+    h3 {
+      text-align: center;
+      color: var(--theme-color);
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .product-your-interest-row {
+      grid-gap: 10px 0;
+      border-bottom: 1px solid #E2E5EA;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  p {
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto;
+    color: #797979;
+  }
+}
+
+.our-community {
+
+  border: 1px solid #E2E5EA;
+  box-shadow: 1px 1px 6px #E2E5EA;
+  border-radius: 8px;
+  padding: 26px;
+  display: grid;
+  gap: 16px;
+
+  .our-community-single {
+    border-bottom: 1px solid #EFF2F7;
+    padding-bottom: 16px;
+
+    h2 {
+      text-align: center;
+      padding-bottom: 16px;
+    }
+
+    h4 {
+      font-weight: 500;
+      padding-bottom: 16px;
+    }
+
+    h5 {
+      text-align: right;
+      font-weight: 500;
+      color: var(--theme-color);
+      margin-top: 10px;
+
+      &::after {
+        content: ">";
+        color: var(--theme-color);
+      }
+    }
+
+    p {
+      color: #969696;
+      margin-bottom: 0;
+    }
+  }
+
+  .our-community-single:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
+
+}
+
+@keyframes spaceboots {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}

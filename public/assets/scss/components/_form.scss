@@ -1,0 +1,86 @@
+/**=====================
+     form css start
+  ==========================**/
+.form-control {
+  font-size: 14px;
+  //font-size: 16px;
+  padding: calc(4px + (14 - 10) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+  &.subscribe-input {
+    border: none;
+    border-radius: 0;
+  }
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  &:focus {
+    background-color: $white;
+    border-color: $light-blue;
+    box-shadow: none;
+    color: $black1;
+  }
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-select {
+  font-size: 14px;
+
+  &:focus {
+    background-color: $white;
+    border-color: $white;
+    box-shadow: none;
+    color: $black1;
+  }
+}
+
+.input-group {
+  .btn {
+    z-index: 1;
+  }
+}
+
+.checkbox_animated {
+  cursor: pointer;
+  position: relative;
+  margin-right: 16px;
+
+  [dir="rtl"] & {
+    margin-right: 10px;
+    margin-left: 16px;
+  }
+
+  &:before {
+    transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    transform: rotate(-45deg) scale(0, 0);
+    @include pos;
+    left: 4px;
+    top: 2px;
+    z-index: 1;
+    @include pseudowh($width: 12px, $height: 6px);
+    border: 2px solid var(--theme-color);
+    border-top-style: none;
+    border-right-style: none;
+  }
+
+  &:after {
+    @include pos;
+    top: -4px;
+    left: -1px;
+    @include pseudowh($width: 21px, $height: 21px);
+    background: $white;
+    border: 2px solid $gray-light;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  &:checked {
+    &:before {
+      transform: rotate(-45deg) scale(1, 1);
+    }
+  }
+}
