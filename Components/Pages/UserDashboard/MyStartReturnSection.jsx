@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Col, Container, Label, Modal, ModalBody, Row} from "reactstrap";
 import NavSection from "../../Products/Common/NavSection";
-import {APICallUrl,image_api} from "../../Constant";
+import {APICallUrl,APIImage} from "../../Constant";
 import {useSelector} from "react-redux";
 import {selectLoginToken} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {Btn} from "../../AbstractElements";
@@ -410,7 +410,7 @@ const MyStartReturnSection = () => {
                                                                             </Col>
                                                                             <Col lg="2" md="3" xs='3'>
                                                                                 <img style={{maxHeight: "60px"}}
-                                                                                     src={`${image_api}/${el?.product_image}`}/>
+                                                                                     src={`${APIImage}/${el?.product_image}`}/>
                                                                             </Col>
                                                                             <Col lg="3" md="8" xs="8">
                                                                                 <p className="text-start">{el?.product_name}</p>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Col} from 'reactstrap';
-import {image_api} from '../../Constant';
+import {APICallUrl,APIImage} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import {selectAuth} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {persistor} from "../../../ReduxToolkit/store";
@@ -45,9 +45,9 @@ const RightTab = ({elem, LeftRightTab, defImg, isProductNew}) => {
                                         <Link href={`/${item?.slugable?.prefix}/${item?.slugable?.key}`}
                                               className='text-center'>
                                             <img width="90" height="120"
-                                                // src={`${image_api}/${item.image}`}
+                                                // src={`${APICallUrl}/storage/${item.image}`}
                                                  loading="lazy"
-                                                 src={defImg === "" ? `${image_api}/${item.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                 src={defImg === "" ? `${APIImage}/${item.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                 className='img-fluid'
                                                 alt={item?.name} title={item?.name}/>
                                         </Link>

@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import Link from "next/link";
-import {APICallUrl,image_api, NewArrival} from "../Constant";
+import {APICallUrl, NewArrival,APIImage} from "../Constant";
 import {PersistGate} from "redux-persist/integration/react";
 import {persistor} from "../../ReduxToolkit/store";
 import DynamicRating from "../Element/DynamicRating";
@@ -115,7 +115,7 @@ const Accessories = ({acc, addToCart, title}) => {
                                             <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}
                                                   className='text-center'>
                                                 <img height="115" width="150"
-                                                     src={defImg === "" ? `${image_api}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                     src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                      className='img-fluid'
                                                      title={elem?.name}
                                                      alt={elem?.name} key={i}/>

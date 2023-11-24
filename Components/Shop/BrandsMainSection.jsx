@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Col, Container, Row} from "reactstrap";
-import {image_api} from "../Constant";
+import {APICallUrl,APIImage} from "../Constant";
 import Link from "next/link";
 
 const BrandsMainSection = ({brands}) => {
@@ -68,7 +68,7 @@ const BrandsMainSection = ({brands}) => {
                                         <Link href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}
                                               className="d-flex justify-content-center w-100">
                                             <div className="brands-div">
-                                                <img src={`${image_api}/${el.logo}`} alt={el.name}
+                                                <img src={`${APIImage}/${el?.logo}`} alt={el?.name}
                                                      title={el.name}/>
                                             </div>
                                         </Link>
@@ -77,7 +77,7 @@ const BrandsMainSection = ({brands}) => {
                                             <Link href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}
                                                   className="d-flex justify-content-center w-100">
                                                 <div className="brands-div">
-                                                    <img src={`${image_api}/${el.logo}`} alt={el.name}
+                                                    <img src={`${APIImage}/${el?.logo}`} alt={el?.name}
                                                          title={el.name}/>
                                                 </div>
                                             </Link>
@@ -86,7 +86,7 @@ const BrandsMainSection = ({brands}) => {
                                                 <Link href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}
                                                       className="d-flex justify-content-center w-100">
                                                     <div className="brands-div">
-                                                        <img src={`${image_api}/${el.logo}`} alt={el.name}
+                                                        <img src={`${APIImage}/${el?.logo}`} alt={el?.name}
                                                              title={el.name}/>
                                                     </div>
                                                 </Link>

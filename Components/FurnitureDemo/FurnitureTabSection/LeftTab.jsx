@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import {Col} from 'reactstrap';
-import {image_api} from '../../Constant';
+import {APICallUrl,APIImage} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import {useSelector} from "react-redux";
 import {selectAuth} from "../../../ReduxToolkit/Slices/LoginSlice";
@@ -49,8 +49,8 @@ const LeftTab = ({elem, LeftRightTab, defImg, isProductNew}) => {
                                           className='text-center'>
                                         <img width="90" height="120"
                                              loading="lazy"
-                                            // src={imageLoaded ? `${image_api}/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                                             src={defImg === "" ? `${image_api}/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                            // src={imageLoaded ? `${APICallUrl}/storage/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                             src={defImg === "" ? `${APIImage}/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                              className='img-fluid'
                                              alt={result?.name} title={result?.name}/>
                                     </Link>

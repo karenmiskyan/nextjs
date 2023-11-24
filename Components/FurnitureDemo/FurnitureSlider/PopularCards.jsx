@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Row} from 'reactstrap';
-import {image_api, CommonPath, ShopNow} from "../../Constant";
+import {APICallUrl,APIImage, CommonPath, ShopNow} from "../../Constant";
 import {Btn} from "../../AbstractElements";
 import {SortingByOrderFunction} from "../../../Utils/sortingFunctions";
 import {useRouter} from "next/router";
@@ -19,7 +19,7 @@ const PopularCard = ({brands, defImg}) => {
                         <Link href={`${brand?.slugable?.prefix}/${brand?.slugable?.key}`}>
                             <img width="170" height="60"
                                  loading="lazy"
-                                 src={defImg === "" ? `${image_api}/${brand?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                 src={defImg === "" ? `${APIImage}/${brand?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                  alt={brand?.alt} title={brand?.title}
                                  style={{margin: "30px 0 20px", maxWidth: "170px", width: "100%", objectFit: "contain"}}/>
                         </Link>
@@ -31,7 +31,7 @@ const PopularCard = ({brands, defImg}) => {
                         {/*    <p className="product-slider-p">at KOA</p>*/}
                         {/*</div>*/}
 
-                        <img src={`${image_api}/${brand?.img_src}`} style={{maxWidth: "380px", width: "100%"}}/>
+                        <img src={`${APIImage}/${brand?.img_src}`} style={{maxWidth: "380px", width: "100%"}}/>
                         <div style={{paddingBottom: "40px"}}>
                             <Btn
                                 attrBtn={{
@@ -67,7 +67,7 @@ const PopularCard = ({brands, defImg}) => {
                                                                 <Link
                                                                     href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}>
                                                                     <img height="80" width="200" loading="lazy"
-                                                                         src={defImg === "" ? `${image_api}/${el?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                                         src={defImg === "" ? `${APIImage}/${el?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                                          alt={el?.alt} title={el?.title}
                                                                     />
                                                                 </Link>

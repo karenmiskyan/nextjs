@@ -175,7 +175,6 @@ const ShopLeftSidebar = ({data}) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        console.log(data?.categoriesData)
         dispatch(setShopCategory(data?.categoriesData));
         // dispatch(setFirst(false));
         dispatch(setPopState(false));

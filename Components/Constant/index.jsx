@@ -165,11 +165,11 @@ export const Comments = 'Comments';
 // -------------------------------------------
 export const Blogtitle = 'Just a Standard Format Post.';
 export const BlogDesp1 =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry'sstandard dummy text ever since the 1500s.looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.";
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry'sstandard dummy text ever since the 1500s.looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.";
 export const BlogDesp2 =
-  'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latinprofessor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classicalliterature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproducedin their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.';
+    'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latinprofessor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classicalliterature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproducedin their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.';
 export const BlogDesp3 =
-  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum astheir default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes onpurpose injected humour and the like.";
+    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum astheir default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes onpurpose injected humour and the like.";
 export const loadmore = 'Load more';
 export const NoProduct = 'No More Product';
 // -------------------------------------------
@@ -210,7 +210,7 @@ export const Web = 'Web';
 export const ShopTheLatestTrends = 'Shop The Latest Trends';
 export const shopdescription = "Shop the latest clothing tre. From ou.";
 export const bannerdescription =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
 export const Filter = 'Filter';
 export const Close = 'Close';
 export const HideFilter = 'Hide Filter';
@@ -219,15 +219,15 @@ export const Latestfilter = 'Latest filter';
 export const Brand = 'Brand';
 export const TopBrands = 'Top Brands';
 export const SpecifyDescription =
-  "The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.it has text written on it in a black cursive language which looks great on a white color.";
+    "The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.it has text written on it in a black cursive language which looks great on a white color.";
 export const ProductDescription1 =
-  'Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him          some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.';
+    'Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him          some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.';
 export const ProductQuestion1 = 'Give you a complete account of the system';
 export const fabric = 'fabric';
 export const ProductDescription2 =
-  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, autem nemo? Tempora vitae assumenda laudantium unde magni, soluta repudiandae quam, neque voluptate deleniti consequatur            laboriosam veritatis? Tempore dolor molestias voluptatum! Minima possimus, pariatur sed, quasi provident dolorum unde molestias, assumenda consequuntur odit magni blanditiis obcaecati? Eacorporis odit dolorem fuga, fugiat soluta consequuntur magni.';
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, autem nemo? Tempora vitae assumenda laudantium unde magni, soluta repudiandae quam, neque voluptate deleniti consequatur            laboriosam veritatis? Tempore dolor molestias voluptatum! Minima possimus, pariatur sed, quasi provident dolorum unde molestias, assumenda consequuntur odit magni blanditiis obcaecati? Eacorporis odit dolorem fuga, fugiat soluta consequuntur magni.';
 export const ProductDescription3 =
-  "Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.";
+    "Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.";
 export const ProductDescription4 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
 export const Customerreviews = 'Customer Reviews';
 export const numRatings = '82 Ratings';
@@ -321,7 +321,7 @@ export const MarkEnderess = 'Mark Enderess,';
 export const deletedesp = 'We Are Sorry To Here You Would Like To Delete Your Account.';
 export const Note = 'Note';
 export const deletedesp2 =
-  'Deleting your account will permanently remove your profile, personal settings, and all other associated information. Once your account is deleted, You will be logged out and will be unable to log back in.';
+    'Deleting your account will permanently remove your profile, personal settings, and all other associated information. Once your account is deleted, You will be logged out and will be unable to log back in.';
 export const deletedesp3 = 'If you understand and agree to the above statement, and would still like to delete your account, than click below';
 export const MyWishlist = 'My Wishlist';
 export const freeshipping = 'Free shipping for orders above $500 USD';
@@ -359,7 +359,7 @@ export const FooterDesp = 'Keep up to date with our latest news and special offe
 export const GotQustion = 'Got Qustion ? Call Us 24/7';
 export const mobileno = '(866) 606-5229';
 export const FooterDespp =
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ab dolorem nulla impedit saepe esse et? Ea, totam recusandae doloribus ipsa esse voluptate quis nisi? Voluptate.';
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ab dolorem nulla impedit saepe esse et? Ea, totam recusandae doloribus ipsa esse voluptate quis nisi? Voluptate.';
 export const VoxoMail = 'test@gmail.com';
 export const phone = 'phone ';
 export const Weaccept = 'We accept:';
@@ -382,8 +382,6 @@ export const ProductAdded = 'Product Added';
 export const DoneDeleteYourAccount = 'Done!!! Deleted Your Account';
 export const Okay = 'Okay';
 export const Areyousuretodelete = 'Are you sure you want to delete your account?';
-export const APICallUrl = process.env.NEXT_PUBLIC_API_BACKEND
-
-export const image_api = 'https://d13hhdx1yjmha3.cloudfront.net/filters:format(webp)'
-
-export const pdf_api = 'https://koaedi.s3.us-west-1.amazonaws.com'
+export const APICallUrl = process.env.NEXT_PUBLIC_API_BACKEND;
+export const APIImage = "https://d13hhdx1yjmha3.cloudfront.net/filters:format(webp)";
+export const APIPDF = "https://koaedi.s3.us-west-1.amazonaws.com";

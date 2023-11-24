@@ -17,7 +17,7 @@ import CommonMobileView from "../Components/Element/CommonMobileView";
 import SectionSvg from "../Components/Pages/404/SectionSvg";
 import store from "../ReduxToolkit/store";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const currentMainMenu = selectMainMenu(store.getState());
     const currentSlider = selectSlider(store.getState());
     const currentSpecialOffer = selectSpecialOffer(store.getState());

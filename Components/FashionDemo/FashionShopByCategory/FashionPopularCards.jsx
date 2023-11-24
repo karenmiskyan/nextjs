@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Col, Row} from 'reactstrap';
-import {image_api, CommonPath} from "../../Constant";
+import {APICallUrl,APIImage, CommonPath} from "../../Constant";
 import Link from "next/link";
 
 const FashionPopularCard = ({popularCard, defImg}) => {
@@ -49,8 +49,8 @@ const FashionPopularCard = ({popularCard, defImg}) => {
 
                                                                         <img width="120" height="120"
                                                                              loading="lazy"
-                                                                             src={defImg === "" ? `${image_api}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                                                                            // src={`${image_api}/${el?.image}`}
+                                                                             src={defImg === "" ? `${APIImage}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                                            // src={`${APICallUrl}/storage/${el?.image}`}
                                                                              alt={el.name} title={el?.name}/>
                                                                     </Link>
 

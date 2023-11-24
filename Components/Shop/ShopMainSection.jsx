@@ -2,7 +2,7 @@ import React from 'react';
 import {Col, Container, Row} from "reactstrap";
 import Link from "next/link";
 import CategoryCard from "../ShoesDemo/ShoesCategory/CategoryCard";
-import {image_api, CommonPath} from "../Constant";
+import {APICallUrl, CommonPath,APIImage} from "../Constant";
 import {SortingByNameFunction, SortingByOrderFunction} from "../../Utils/sortingFunctions";
 
 const ShopMainSection = ({categories}) => {
@@ -26,7 +26,7 @@ const ShopMainSection = ({categories}) => {
                                                 <Col className="shop-category-img" lg="5" md="5">
                                                     {/*<img src={`${CommonPath}/tvVector.png`}/>*/}
                                                     <Link href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}>
-                                                        <img src={`${image_api}/${el?.image}`} alt={el?.name}
+                                                        <img src={`${APIImage}/${el?.image}`} alt={el?.name}
                                                              title={el?.name}/>
                                                         <h4>{el?.name}</h4>
                                                     </Link>

@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {APICallUrl,image_api} from "../../Constant";
+import {APICallUrl,APIImage} from "../../Constant";
 import {Button, Col, Container, Modal, ModalBody, ModalHeader, Row} from "reactstrap";
 import NavSection from "../../Products/Common/NavSection";
 import {useSelector} from "react-redux";
@@ -495,7 +495,7 @@ const MyOrdersSection = () => {
                                                                         </Col>
                                                                         <Col lg="2" md="3" xs='3'>
                                                                             <img style={{maxHeight: "60px"}}
-                                                                                 src={`${image_api}/${el?.product_image}`}/>
+                                                                                 src={`${APIImage}/${el?.product_image}`}/>
                                                                         </Col>
                                                                         <Col lg="3" md="8" xs="8">
                                                                             <p className="text-start">{el?.product_name}</p>
@@ -660,7 +660,7 @@ const MyOrdersSection = () => {
                                                                         </Col>
                                                                         <Col lg="2" md="3" xs='3'>
                                                                             <img style={{maxHeight: "60px"}}
-                                                                                 src={`${image_api}/${el?.product_image}`}/>
+                                                                                 src={`${APIImage}/${el?.product_image}`}/>
                                                                         </Col>
                                                                         <Col lg="3" md="6" xs="5">
                                                                             <p className="text-start">{el?.product_name}</p>

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, {useEffect, useState} from 'react';
-import {APICallUrl} from '../../Components/Constant';
+import {APICallUrl, APIImage} from '../../Components/Constant';
 import BreadCrumb from '../../Components/Element/BreadCrumb';
 import FlowerSubscribe from '../../Components/FlowerDemo/FlowerSubscribe';
 import ProductRightSidebarContain from '../../Components/Products/ProductRightSidebarContain.jsx';
@@ -236,7 +236,7 @@ const Product = ({data}) => {
         const seoTitle = (data?.product?.product?.metadata[0]?.meta_value[0]?.seo_title || "").replace(/"/g, '\\"');
         const seoDescription = (data?.product?.product?.metadata[0]?.meta_value[0]?.seo_description || "").replace(/"/g, '\\"');
 
-        const images = data?.product?.product?.images?.map(el => `${APICallUrl}/storage/${el}`) || [];
+        const images = data?.product?.product?.images?.map(el => `${APIImage}/${el}`) || [];
         return {
             __html: `{
     "@context": "https://schema.org/",

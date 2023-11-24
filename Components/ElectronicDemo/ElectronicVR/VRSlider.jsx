@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Slider from 'react-slick';
 import {VRSlider} from '../../../Data/SliderSettingsData';
-import {APICallUrl,image_api, CommonPath, NEW} from '../../Constant';
+import {APICallUrl,APIImage, CommonPath, NEW} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import {Btn} from "../../AbstractElements";
 import {selectAuth, selectLoginToken, toggleDivVisibility} from "../../../ReduxToolkit/Slices/LoginSlice";
@@ -109,7 +109,7 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                             <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}
                                                   className='text-center'>
                                                 <img height="160" width="160"
-                                                     src={defImg === "" ? `${image_api}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                     src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                      className='img-fluid'
                                                      title={elem?.name}
                                                      alt={elem?.name} key={i}/>

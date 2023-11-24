@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Row, Table} from 'reactstrap';
-import {image_api, OrderDetail} from '../../Constant';
+import {APICallUrl, APIImage,OrderDetail} from '../../Constant';
 import OrderSummary from './OrderSummary';
 
 const OrderDetails = ({details}) => {
@@ -23,7 +23,7 @@ const OrderDetails = ({details}) => {
 
                                                     <Col lg="3" sm='6'  xs="8" className="text-align-left">
                                                         {/*<a href='#javascript'>*/}
-                                                        <img src={`${image_api}/${el?.product_image}`}
+                                                        <img src={`${APIImage}/${el?.product_image}`}
                                                              title={el?.product_name} alt={el?.product_name}
                                                              className='img-fluid'/>
                                                         {/*</a>*/}

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Col, Form, Input, InputGroup, Label, Row} from 'reactstrap';
 import {getAPIData} from '../../../Utils';
 import {Btn} from '../../AbstractElements';
-import {APICallUrl,image_api, CommonPath, EXAMPLECODE, Promocode, Redeem, TotalUSD, Yourcart} from '../../Constant';
+import {APICallUrl, APIImage,CommonPath, EXAMPLECODE, Promocode, Redeem, TotalUSD, Yourcart} from '../../Constant';
 import TotalPrice from './TotalPrice';
 import {selectAmountCoupon, selectCart, selectTotal} from "../../../ReduxToolkit/Slices/CartSlice";
 import Shipping from "../Cart/Shipping";
@@ -95,7 +95,7 @@ const SideBarCartBox = ({
                                                                             {/*<div className='checkout-image'>*/}
                                                                             <img
                                                                                 style={{maxWidth: "100px"}}
-                                                                                src={`${image_api}/${elem?.product?.image}`}
+                                                                                src={`${APIImage}/${elem?.product?.image}`}
                                                                                 alt={elem?.product?.name}
                                                                                 title={elem?.product?.name}
                                                                                 className='img-fluid'/>
@@ -252,7 +252,7 @@ const SideBarCartBox = ({
 
                                                                             <img
                                                                                 style={{maxWidth: "100px"}}
-                                                                                src={`${image_api}/${elem?.product?.image}`}
+                                                                                src={`${APIImage}/${elem?.product?.image}`}
                                                                                 alt={elem?.product?.name}
                                                                                 title={elem?.product?.name}
                                                                                 className='img-fluid'/>
@@ -402,7 +402,7 @@ const SideBarCartBox = ({
                                                                             {/*<div className='checkout-image'>*/}
                                                                             <img width="100" height="100"
                                                                                  style={{maxWidth: "100px"}}
-                                                                                 src={`${image_api}/${elem?.product?.image}`}
+                                                                                 src={`${APIImage}/${elem?.product?.image}`}
                                                                                  alt={elem?.product?.name}
                                                                                  title={elem?.product?.name}
                                                                                  className='img-fluid'/>

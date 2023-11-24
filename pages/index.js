@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, {useEffect, useState, Fragment} from 'react';
-import {APICallUrl} from '../Components/Constant';
+import { APICallUrl, APIImage } from '../Components/Constant'; // Update this line
 import Layout6 from "../Layout/Layout6";
 import VegetableHomeSlider from "../Components/VegetablesDemo/VegetableHomeSlider";
 import FashionService from "../Components/FashionDemo/FashionService";
@@ -71,7 +71,7 @@ import SonyDealerForm from "../Components/Pages/UserDashboard/SonyDealer/SonyDea
 //     return {props: {data}}
 // }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const currentMainMenu = selectMainMenu(store.getState());
     const currentSlider = selectSlider(store.getState());
@@ -230,10 +230,11 @@ export default function Home({data}) {
                     </section>
                 }
 
+                <FashionShopByCategory popularCard={data?.shopByCategory}/>
+
                 {data?.specialOffer?.length > 0 &&
                     <ElectronicHurryUp tabSection={specialOffer.length > 0 ? specialOffer : data?.specialOffer}/>}
 
-                <FashionShopByCategory popularCard={data?.shopByCategory}/>
 
                 {data?.newArrival?.length > 0 &&
                     <ElectronicVR productData={newArrival.length > 0 ? newArrival : data?.newArrival}/>}

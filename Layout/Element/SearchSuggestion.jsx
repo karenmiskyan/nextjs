@@ -2,7 +2,7 @@ import {useRouter} from 'next/router';
 import React, {Fragment} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Col, Media, Row} from 'reactstrap';
-import {APICallUrl, CommonPath} from '../../Components/Constant';
+import {APICallUrl,APIImage, CommonPath} from '../../Components/Constant';
 import DynamicRating from '../../Components/Element/DynamicRating';
 import NoProductFound from './NoProductFound';
 import Link from "next/link";
@@ -134,7 +134,7 @@ const SearchSuggestion = ({productData, categoriesData, brandsData, Is_Focus, on
                                                             <div className='media-image'>
                                                                 {/*{elem?.images.slice(0, 1).map((img, i) => (*/}
                                                                 <img
-                                                                    src={`${APICallUrl}/storage/${elem.image}`}
+                                                                    src={`${APIImage}/${elem.image}`}
                                                                     className='img-fluid' title={elem?.name}
                                                                     alt={elem?.name} key={i}/>
                                                             </div>

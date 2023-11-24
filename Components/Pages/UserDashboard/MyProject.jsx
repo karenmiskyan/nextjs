@@ -1,8 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {selectLoginToken} from "../../../ReduxToolkit/Slices/LoginSlice";
-import {APICallUrl} from "../../Constant";
-import {image_api} from "../../Constant";
+import {APICallUrl,APIImage} from "../../Constant";
 import {Button, Col, Container, Input, Modal, ModalBody, Row} from "reactstrap";
 import NavSection from "../../Products/Common/NavSection";
 import {Btn} from "../../AbstractElements";
@@ -460,7 +459,7 @@ const MyProject = ({project, setProject, s}) => {
                                                                           href={`/${el?.product?.slugable?.prefix}/${el?.product?.slugable?.key}`}>
 
                                                                         <img
-                                                                            src={`${image_api}/${el?.product?.image}`}
+                                                                            src={`${APIImage}/${el?.product?.image}`}
                                                                             style={{
                                                                                 maxWidth: "120px",
                                                                                 maxHeight: "120px"

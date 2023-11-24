@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import Slider from 'react-slick';
 import {MainHomeSlider, VegetableMainSlider} from '../../../Data/SliderSettingsData';
-import {APICallUrl,image_api, CommonPath, ShopNow} from '../../Constant';
+import {APICallUrl, APIImage, CommonPath, ShopNow} from '../../Constant';
 import {Btn} from "../../AbstractElements";
 import {useRouter} from "next/router";
 import Img from "../../Element/Images";
@@ -37,9 +37,9 @@ const VegetablePoster = ({nav2, slider1, slider}) => {
                                      onClick={() => window.open(el?.link, '_blank')}/>
                             }
 
-                            <img height="350" width="350"
+                            <img height="350" width="400"
                                  loading="lazy"
-                                 src={defImg === "" ? `${image_api}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                 src={defImg === "" ? `${APIImage}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                  className="image-slider"/>
                             {
                                 (el?.title || el?.content) && <Fragment>

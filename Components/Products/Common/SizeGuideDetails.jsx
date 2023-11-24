@@ -2,8 +2,7 @@ import React from 'react';
 import {SizeColumn, SizeData} from '../../../Data/SizeGuideData';
 import DataTables from '../../Element/DataTable';
 import {FaFilePdf} from "react-icons/fa6";
-import {APICallUrl} from "../../Constant";
-import {pdf_api} from "../../Constant";
+import {APICallUrl, APIPDF} from "../../Constant";
 
 
 const SizeGuideDetails = ({downloads}) => {
@@ -15,7 +14,7 @@ const SizeGuideDetails = ({downloads}) => {
 
                         if (el.url !== '') {
                             return (
-                                <a target="_blank" href={`${pdf_api}/${el?.url}`} style={{color: "black"}}
+                                <a target="_blank" href={`${APIPDF}/${el?.url}`} style={{color: "black"}}
                                    key={i}>
                                     <div className="download-section">
                                         <FaFilePdf style={{color: "var(--theme-color)"}} size={50}/>

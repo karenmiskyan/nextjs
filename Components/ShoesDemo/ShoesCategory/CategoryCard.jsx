@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import Slider from 'react-slick';
 import {ShoesCategorySlider} from '../../../Data/SliderSettingsData';
-import {image_api} from '../../Constant';
+import {APICallUrl,APIImage} from '../../Constant';
 import {useRouter} from "next/router";
 
 const CategoryCard = ({ShoesFilter, slug}) => {
@@ -34,7 +34,7 @@ const CategoryCard = ({ShoesFilter, slug}) => {
                                             minHeight: "100px",
                                         }}>
                                             <img width="118" height="100"
-                                                 src={defImg === "" ? `${image_api}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                 src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                  style={{maxHeight: "100px", objectFit:"contain"}}
                                                  className='img-fluid'
                                                  alt={elem?.name} title={elem?.name}/>

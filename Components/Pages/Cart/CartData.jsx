@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Col, Row} from 'reactstrap';
-import {image_api} from '../../Constant';
+import {APICallUrl, APIImage} from '../../Constant';
 import {useDispatch, useSelector} from 'react-redux';
 import {toast} from 'react-toastify';
 import {Input} from 'reactstrap';
@@ -163,7 +163,7 @@ const CartData = () => {
                                     <Col lg='3' md='12'>
                                         <Link
                                             href={`${elem?.product?.slugable?.prefix}/${elem?.product?.slugable?.key}`}>
-                                            <img src={`${image_api}/${elem?.product?.image}`}
+                                            <img src={`${APIImage}/${elem?.product?.image}`}
                                                  alt={elem?.product?.name} title={elem?.product?.name}/>
                                         </Link>
                                     </Col>

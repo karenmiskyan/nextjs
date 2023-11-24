@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import React, {Fragment, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-
-import {image_api, CommonPath, NEW} from '../../Constant';
+import {APICallUrl, CommonPath, APIImage} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import SkeletonLoader from '../../Element/SkeletonLoader';
 import {Btn} from "../../AbstractElements";
@@ -81,7 +80,7 @@ const AllProducts = ({currentData, defImg}) => {
                                                   }}
                                                   className='text-center'>
                                                 <img width="160" height="160"
-                                                     src={defImg === "" ? `${image_api}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                     src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                      style={{maxHeight: "160px", maxWidth: "160px", objectFit: 'contain'}}
                                                      className='bg-img'
                                                      alt={elem?.name} title={elem?.name}

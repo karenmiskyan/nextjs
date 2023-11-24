@@ -2,7 +2,7 @@ import {useRouter} from 'next/router';
 import React from 'react';
 import {Col} from 'reactstrap';
 import {Btn} from '../../AbstractElements';
-import {image_api, CommonPath, OFF, ShopNow} from '../../Constant';
+import {APICallUrl, CommonPath, OFF, ShopNow,APIImage} from '../../Constant';
 import CountDown from '../../Element/CountDown';
 import Img from '../../Element/Images';
 
@@ -13,7 +13,7 @@ const LeftSideDeal = ({elem, defImg}) => {
         <Col xl='9' lg='8'>
             <div className='timer-banner text-center bg-size'>
                 <Img
-                    src={`${image_api}/${elem?.img_src}`}
+                    src={`${APIImage}/${elem?.img_src}`}
                     width="1236" height="618" alt={elem?.name} className='bg-img'/>
 
                 <div className='discount-offer'>

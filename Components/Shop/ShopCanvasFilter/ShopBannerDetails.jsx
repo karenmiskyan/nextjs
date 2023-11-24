@@ -1,12 +1,20 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import {image_api, bannerdescription, CommonPath, shopdescription, ShopNow, ShopTheLatestTrends} from '../../Constant';
+import {
+    APICallUrl,
+    APIImage,
+    bannerdescription,
+    CommonPath,
+    shopdescription,
+    ShopNow,
+    ShopTheLatestTrends
+} from '../../Constant';
 import Img from '../../Element/Images';
 import {Btn} from "../../AbstractElements";
 
 const ShopBannerDetails = ({shopCategory, defImg}) => {
     let [imageUrl, setImageUrl] = useState("")
     useEffect(() => {
-        setImageUrl(`${image_api}/${encodeURIComponent(shopCategory?.image)}`.replace(/%2F/g, '/'));
+        setImageUrl(`${APIImage}/${encodeURIComponent(shopCategory?.image)}`.replace(/%2F/g, '/'));
     }, [shopCategory])
 
     // imageUrl = imageUrl.replace(/%2F/g, '/');
@@ -17,8 +25,8 @@ const ShopBannerDetails = ({shopCategory, defImg}) => {
                 encodeURIComponent(shopCategory?.image) !== "undefined" && shopCategory?.image !== null &&
                 <div className='banner-deatils'>
                     <div className='banner-image'
-                         // src={imageLoaded ? `${image_api}/${brand?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                         // src={defImg === "" ? `${image_api}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                         // src={imageLoaded ? `${APICallUrl}/storage/${brand?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                         // src={defImg === "" ? `${APICallUrl}/storage/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
 
                          style={{backgroundImage: `url(${defImg === "" ? imageUrl : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" })`}}>
                         <Img src={""}

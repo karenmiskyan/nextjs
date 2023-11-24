@@ -3,7 +3,7 @@ import {ShoppingBag, ShoppingCart} from 'react-feather';
 import {Col, Input, Media, Row} from 'reactstrap';
 import {useDispatch, useSelector} from 'react-redux';
 import {deleteProduct, getAPIData} from '../../Utils';
-import {APICallUrl, CommonPath} from '../../Components/Constant';
+import {APICallUrl,APIImage, CommonPath} from '../../Components/Constant';
 import {Btn} from '../../Components/AbstractElements';
 import TotalPrice from './TotalPrice';
 import {toast} from 'react-toastify';
@@ -195,7 +195,7 @@ const ItemCart = () => {
                                                                                       href={`/${item?.product?.slugable?.prefix}/${item?.product?.slugable?.key}`}>
                                                                 <div className="image-cart">
                                                                     <img
-                                                                        src={`${APICallUrl}/storage/${item?.product?.image}`}
+                                                                        src={`${APIImage}/${item?.product?.image}`}
                                                                         className='img-fluid' title={item?.product?.name}
                                                                         alt={item?.product?.name}/>
                                                                 </div>

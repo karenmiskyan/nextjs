@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import Slider from 'react-slick';
 import {AutoFadeSliderNavData} from '../../../Data/SliderSettingsData';
-import {APICallUrl} from '../../Constant';
-import {image_api} from '../../Constant';
+import {APICallUrl,APIImage} from '../../Constant';
 import ImageZoom from "../ZoomEffect";
 
 const AutoFadeSlider = ({VideoPlay, singleProduct}) => {
 
-    console.log(image_api)
 
     // const [state, setState] = useState({nav1: null, nav2: null});
     // const slider1 = useRef();
@@ -25,9 +23,9 @@ const AutoFadeSlider = ({VideoPlay, singleProduct}) => {
     useEffect(() => {
         setDefImg("");
     }, []);
-    const [image, setImage] = useState(`${image_api}/${singleProduct?.image}`)
+    const [image, setImage] = useState(`${APIImage}/${singleProduct?.image}`)
     useEffect(() => {
-        setImage(`${image_api}/${singleProduct?.image}`)
+        setImage(`${APIImage}/${singleProduct?.image}`)
     }, [singleProduct])
     return (
         <div className='degree-section'>
@@ -69,10 +67,10 @@ const AutoFadeSlider = ({VideoPlay, singleProduct}) => {
 
                                 <div key={i}
                                      className="details-image-option-div"
-                                     onClick={() => setImage(`${image_api}/${item}`)}
+                                     onClick={() => setImage(`${APIImage}/${item}`)}
                                 >
                                     {
-                                        <img src={defImg === "" ? `${image_api}/${item}`: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                        <img src={defImg === "" ? `${APIImage}/${item}`: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                              className='img-fluid' alt={item} title={item}/>
                                     }
                                 </div>

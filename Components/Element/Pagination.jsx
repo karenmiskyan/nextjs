@@ -64,7 +64,6 @@ const PaginationComp = ({productData, addClass, sale, search,}) => {
 
                 dispatch(setFirst(true));
                 dispatch(setLoading(true));
-                console.log(productData.path)
                 fetch(`${productData.path}?${search ? search : ""}json=true&per_page=${router?.query?.per_page || perPage}&page=${router?.query?.page || 1}${typeof router?.query["categories[]"] === 'string' ? `&categories%5B%5D=${Number(router?.query["categories[]"])}` : router?.query["categories[]"] ? router?.query?.["categories[]"].map(el => `&categories%5B%5D=${Number(el)}`).join('') : ""}${typeof router?.query["brands[]"] === 'string' ? `&brands%5B%5D=${Number(router?.query["brands[]"])}` : router?.query["brands[]"] ? router?.query?.["brands[]"].map(el => `&brands%5B%5D=${Number(el)}`).join('') : ""}${router?.query?.min_price ? `&min_price=${Number(router?.query?.min_price)}` : ""}${router?.query?.max_price ? `&max_price=${Number(router?.query?.max_price)}` : ""}${typeof router?.query["option_values[]"] === 'string' ? `&option_values%5B%5D=${router?.query["option_values[]"]}` : router?.query["option_values[]"] ? router?.query?.["option_values[]"].map(el => `&option_values%5B%5D=${el}`).join('') : ""}${sale}`, {
                     method: 'GET',
                     headers: {
@@ -73,7 +72,7 @@ const PaginationComp = ({productData, addClass, sale, search,}) => {
                     },
                 })
                     .then(res => res.json().then(res => {
-                        console.log(res,"RES0")
+
                             setSelectPage(res.products.current_page);
                             dispatch(setPerPage(router?.query?.per_page || "12"));
                             dispatch(setShopCategory(res));
@@ -150,7 +149,7 @@ const PaginationComp = ({productData, addClass, sale, search,}) => {
                                         })
                                             .then(res => res.json().then(res => {
 
-                                                console.log(res,"RES1")
+
 
                                                     window.scrollTo(0, 100)
                                                     dispatch(setShopCategory(res));
@@ -160,14 +159,14 @@ const PaginationComp = ({productData, addClass, sale, search,}) => {
                                             ));
                                     } else if (r) {
 
-                                        console.log(res,"RES2")
+
 
                                         window.scrollTo(0, 100)
                                         dispatch(setShopCategory(res));
                                         pushStateData(`per_page=${perPage}&page=${selectPage}${filterBrands?.join('')}${filterAttribute?.join('')}${priceRange?.join('')}${filterCategory?.join('')}`)
                                         dispatch(setLoading(false));
                                     } else {
-                                        console.log(res,"RES3")
+
 
                                         dispatch(setShopCategory(res));
                                         // pushStateData(`per_page=${perPage}&page=${selectPage}`)

@@ -2,8 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { Col } from 'reactstrap';
 import { Btn } from '../../AbstractElements';
-
-import {image_api, CommonPath, ShopNow} from '../../Constant';
+import {APICallUrl, CommonPath, ShopNow,APIImage} from '../../Constant';
 import Img from '../../Element/Images';
 
 const RightSideDeal = ({ elem, defImg }) => {
@@ -13,8 +12,8 @@ const RightSideDeal = ({ elem, defImg }) => {
     <Col xl='3' lg='4' className='small-banner'>
       <div className='collection-banner text-center collection-center bg-size'>
         <Img width="396" height="618"
-             src={`${image_api}/${elem?.img_src}`}
-             // src={imageLoaded ? `${image_api}/${elem?.img_src}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+             src={`${APIImage}/${elem?.img_src}`}
+             // src={imageLoaded ? `${APICallUrl}/storage/${elem?.img_src}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
              alt={elem?.name} className='bg-img' />
         <div className="special-offer-content">
           <div dangerouslySetInnerHTML={{__html: elem?.short_description}}/>
