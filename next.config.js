@@ -16,4 +16,12 @@
 
 module.exports = {
     trailingSlash: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'd13hhdx1yjmha3.cloudfront.net',
+            },
+        ],
+    },
 };

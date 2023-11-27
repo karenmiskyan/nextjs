@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Slider from 'react-slick';
 import {VRSlider} from '../../../Data/SliderSettingsData';
-import {APICallUrl,APIImage, CommonPath, NEW} from '../../Constant';
+import {APICallUrl, APIImage, CommonPath, NEW} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import {Btn} from "../../AbstractElements";
 import {selectAuth, selectLoginToken, toggleDivVisibility} from "../../../ReduxToolkit/Slices/LoginSlice";
@@ -14,6 +14,7 @@ import {toast} from "react-toastify";
 import {persistor} from "../../../ReduxToolkit/store";
 import {PersistGate} from "redux-persist/integration/react";
 import formatMoney from "../../../Utils/monayFormat";
+import Image from "next/image";
 
 
 const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
@@ -108,11 +109,12 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                             </div>
                                             <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}
                                                   className='text-center'>
-                                                <img height="160" width="160"
-                                                     src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                                                     className='img-fluid'
-                                                     title={elem?.name}
-                                                     alt={elem?.name} key={i}/>
+                                                <Image height="160" width="160"
+                                                       loading="lazy"
+                                                       src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                       className='img-fluid'
+                                                       title={elem?.name}
+                                                       alt={elem?.name} key={i}/>
                                             </Link>
                                         </div>
                                         <div className='product-details'>
@@ -129,7 +131,8 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                             <ul style={{listStylePosition: "inside", margin: "10px 0"}}>
                                                 {
                                                     elem?.branch_qty === 0 &&
-                                                    <li className="li-home-products" style={{display: "block"}}>Special Order
+                                                    <li className="li-home-products" style={{display: "block"}}>Special
+                                                        Order
                                                     </li>
                                                 }
 
@@ -141,20 +144,21 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                                 </li>
                                                 {
                                                     elem?.branch_qty !== 0 &&
-                                                    <li style={{display: "block",height:"24px"}}></li>
+                                                    <li style={{display: "block", height: "24px"}}></li>
                                                 }
                                             </ul>
                                             <PersistGate loading={null} persistor={persistor}>
                                                 {
                                                     !auth &&
-                                                    <h3 className='theme-color fw-6-1 d-flex' style={{ margin: "10px 0" }}>
+                                                    <h3 className='theme-color fw-6-1 d-flex' style={{margin: "10px 0"}}>
                                                         {formatMoney(
                                                             (elem?.front_sale_price !== null || undefined) && (elem?.price > elem?.front_sale_price)
                                                                 ? elem?.front_sale_price
                                                                 : elem?.price
                                                         )}
                                                         {(elem?.front_sale_price !== null || undefined) && (elem?.price > elem?.front_sale_price) ? (
-                                                            <span className='font-light ms-2 price-money-none '>{formatMoney(elem?.price)}</span>
+                                                            <span
+                                                                className='font-light ms-2 price-money-none '>{formatMoney(elem?.price)}</span>
                                                         ) : (
                                                             ""
                                                         )}

@@ -8,6 +8,7 @@ import {selectAuth} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {PersistGate} from "redux-persist/integration/react";
 import {persistor} from "../../../ReduxToolkit/store";
 import formatMoney from "../../../Utils/monayFormat";
+import Image from "next/image";
 
 const LeftTab = ({elem, LeftRightTab, defImg, isProductNew}) => {
 
@@ -47,7 +48,7 @@ const LeftTab = ({elem, LeftRightTab, defImg, isProductNew}) => {
                                     </div>
                                     <Link href={`/${result?.slugable?.prefix}/${result?.slugable?.key}`}
                                           className='text-center'>
-                                        <img width="90" height="120"
+                                        <Image width="90" height="120"
                                              loading="lazy"
                                             // src={imageLoaded ? `${APICallUrl}/storage/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                              src={defImg === "" ? `${APIImage}/${result.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}

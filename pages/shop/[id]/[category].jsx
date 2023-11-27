@@ -37,6 +37,7 @@ import CommonMobileView from "../../../Components/Element/CommonMobileView";
 import store from "../../../ReduxToolkit/store";
 import {selectLoginToken} from "../../../ReduxToolkit/Slices/LoginSlice";
 import SectionSvg from "../../../Components/Pages/404/SectionSvg";
+import Script from "next/script";
 
 // export async function getServerSideProps({ params }) {
 //     try {
@@ -240,7 +241,7 @@ const Category = ({data}) => {
                 <meta name="description"
                       content={data?.categoriesData?.category?.metadata[0]?.meta_value[0]?.seo_description}/>
                 <meta name='viewport' content='width=device-width, initial-scale=1'/>
-                <script
+                <Script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={addProductJsonLd()}
                     key={`product-jsonld`}

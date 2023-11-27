@@ -22,6 +22,7 @@ import {
 import store from "../../ReduxToolkit/store";
 import {APICallUrl} from "../../Components/Constant";
 import EventSingle from "../../Components/Pages/EventPage/EventSingle";
+import Script from "next/script";
 
 export async function getServerSideProps({res, req, params}) {
     const currentMainMenu = selectMainMenu(store.getState());
@@ -200,7 +201,7 @@ const Id = ({data}) => {
                         <title>{data?.post?.data?.metadata[0]?.meta_value[0]?.seo_title}</title>
                         <meta name="description"
                               content={data?.post?.data?.metadata[0]?.meta_value[0]?.seo_description}/>
-                        <script
+                        <Script
                             type="application/ld+json"
                             dangerouslySetInnerHTML={addProductJsonLd()}
                             key={`product-jsonld`}

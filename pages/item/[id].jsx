@@ -30,6 +30,7 @@ import store from "../../ReduxToolkit/store";
 import {selectLoginToken} from "../../ReduxToolkit/Slices/LoginSlice";
 import SectionSvg from "../../Components/Pages/404/SectionSvg";
 import Accessories from "../../Components/Products/Accessories";
+import Script from "next/script";
 
 // export async function getServerSideProps({params}) {
 //     const product = await fetch(`${APICallUrl}/item/${params?.id}?json=true`);
@@ -276,7 +277,7 @@ const Product = ({data}) => {
                 <title>{data?.product?.product?.metadata[0]?.meta_value[0]?.seo_title}</title>
                 <meta name="description" content={data?.product?.product?.metadata[0]?.meta_value[0]?.seo_description}/>
                 <meta name='viewport' content='width=device-width, initial-scale=1'/>
-                <script
+                <Script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={addProductJsonLd()}
                     key="product-jsonld"

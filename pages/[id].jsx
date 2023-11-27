@@ -21,6 +21,7 @@ import {useRouter} from "next/router";
 import PagesSection from "../Components/Pages/PagesSection";
 import store from "../ReduxToolkit/store";
 import SectionSvg from "../Components/Pages/404/SectionSvg";
+import Script from "next/script";
 
 // export async function getServerSideProps({params}) {
 //     const post = await fetch(`${APICallUrl}/api/v1/posts/${params.id}`);
@@ -282,7 +283,7 @@ const Id = ({data}) => {
                         <title>{data?.page?.metadata[0]?.meta_value[0]?.seo_title}</title>
                         <meta name="description"
                               content={data?.page?.metadata[0]?.meta_value[0]?.seo_description}/>
-                        <script
+                        <Script
                             type="application/ld+json"
                             dangerouslySetInnerHTML={addProductJsonLd()}
                             key={`product-jsonld`}
@@ -294,7 +295,7 @@ const Id = ({data}) => {
                                 <title>{data?.post?.data?.metadata[0]?.meta_value[0]?.seo_title}</title>
                                 <meta name="description"
                                       content={data?.post?.data?.metadata[0]?.meta_value[0]?.seo_description}/>
-                                <script
+                                <Script
                                     type="application/ld+json"
                                     dangerouslySetInnerHTML={addProductJsonLd()}
                                     key={`product-jsonld`}

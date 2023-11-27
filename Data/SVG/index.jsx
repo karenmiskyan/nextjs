@@ -1,10 +1,12 @@
-export const LogoSvg = ({ defImg}) => {
+import Image from "next/image";
+
+export const LogoSvg = ({defImg}) => {
 
     return (
-        <img
+        <Image
             src={defImg === "" ? `/assets/svg/footerlogo.svg` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-
-            style={{maxWidth: "130px", width: "100%", objectFit: "contain"}} width="130" height="52"></img>
+            alt="footer logo"
+            style={{maxWidth: "130px", width: "100%", objectFit: "contain"}} width="130" height="52"/>
 
         // <svg className='svg-icon'>
         //   <use className='fill-color' xlinkHref='/assets/svg/icons.svg#logo'></use>
@@ -14,7 +16,7 @@ export const LogoSvg = ({ defImg}) => {
 };
 export const CustomerSvg = () => {
     return (
-        <img src='/assets/svg/SHIPPING.svg' style={{marginRight: "14px"}}></img>
+        <Image src='/assets/svg/SHIPPING.svg' style={{marginRight: "14px"}} alt="SHIPPING" width="55" height="55"/>
 
         // <svg>
         //   <use xlinkHref='/assets/svg/icons.svg#customer'></use>
@@ -24,7 +26,7 @@ export const CustomerSvg = () => {
 };
 export const StoreSvg = () => {
     return (
-        <img src='/assets/svg/DELIVERY.svg' style={{marginRight: "14px"}}></img>
+        <Image src='/assets/svg/DELIVERY.svg' style={{marginRight: "14px"}} alt="DELIVERY" width="55" height="55"/>
 
         // <svg>
         //   <use xlinkHref='/assets/svg/icons.svg#shop'></use>
@@ -33,7 +35,7 @@ export const StoreSvg = () => {
 };
 export const PaymentSvg = () => {
     return (
-        <img src='/assets/svg/PICKUP.svg' style={{marginRight: "14px"}}></img>
+        <Image src='/assets/svg/PICKUP.svg' style={{marginRight: "14px"}} alt="PICKUP" width="55" height="55"/>
 
         // <svg>
         //   <use xlinkHref='/assets/svg/icons.svg#secure-payment'></use>
@@ -42,7 +44,7 @@ export const PaymentSvg = () => {
 };
 export const ReturnSvg = () => {
     return (
-        <img src='/assets/svg/DVR.svg' style={{marginRight: "14px"}}></img>
+        <Image src='/assets/svg/DVR.svg' style={{marginRight: "14px"}} alt="DVR" width="55" height="55"/>
 
         // <svg>
         //   <use xlinkHref='/assets/svg/icons.svg#return'></use>

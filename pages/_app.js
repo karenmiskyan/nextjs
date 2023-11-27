@@ -18,6 +18,7 @@ import {APICallUrl} from "../Components/Constant";
 import {PersistGate} from "redux-persist/integration/react";
 import {selectLoginToken} from "../ReduxToolkit/Slices/LoginSlice";
 import {useLoadScript} from "@react-google-maps/api";
+import Script from "next/script";
 
 const libraries = ["places"];
 
@@ -99,7 +100,8 @@ export default function MyApp({Component, pageProps}) {
                     rel="stylesheet"/>
                 <meta name="google-site-verification" content="jsrLdK6AIfFp5ne1rmK0LzERfE0QJn7KIOxSVf671zE"/>
 
-                <script
+                <Script
+                    strategy="lazyOnload"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={addProductJsonLd()}
                     key={`product-jsonld`}
@@ -119,7 +121,6 @@ export default function MyApp({Component, pageProps}) {
 
 
             </Head>
-
             <Provider store={store}>
                 {/*<PersistGate loading={null} persistor={persistor}>*/}
                 <Component  {...pageProps} loadError={loadError} isLoaded={isLoaded}/>

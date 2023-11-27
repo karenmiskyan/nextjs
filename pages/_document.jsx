@@ -1,4 +1,5 @@
 import {Html, Head, Main, NextScript} from 'next/document';
+import Script from "next/script";
 
 export default function Document() {
     return (
@@ -13,8 +14,8 @@ export default function Document() {
             <body>
             <Main/>
             <NextScript/>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJ0LRGKXYM"></script>
-            <script
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-EJ0LRGKXYM"></Script>
+            <Script
                 dangerouslySetInnerHTML={{
                     __html: `
                 window.dataLayer = window.dataLayer || [];

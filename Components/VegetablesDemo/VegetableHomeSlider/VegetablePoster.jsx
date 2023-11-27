@@ -5,6 +5,7 @@ import {APICallUrl, APIImage, CommonPath, ShopNow} from '../../Constant';
 import {Btn} from "../../AbstractElements";
 import {useRouter} from "next/router";
 import Img from "../../Element/Images";
+import Image from "next/image";
 
 const VegetablePoster = ({nav2, slider1, slider}) => {
 
@@ -37,10 +38,12 @@ const VegetablePoster = ({nav2, slider1, slider}) => {
                                      onClick={() => window.open(el?.link, '_blank')}/>
                             }
 
-                            <img height="350" width="400"
-                                 loading="lazy"
+                            <Image height="350" width="1400"
+                                 loading="lazy" alt={i}
                                  src={defImg === "" ? `${APIImage}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                                 className="image-slider"/>
+                                 className="image-slider"
+
+                            />
                             {
                                 (el?.title || el?.content) && <Fragment>
                                     <div className='left-side-contain'>

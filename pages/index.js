@@ -2,14 +2,22 @@ import Head from 'next/head';
 import React, {useEffect, useState, Fragment} from 'react';
 import { APICallUrl, APIImage } from '../Components/Constant'; // Update this line
 import Layout6 from "../Layout/Layout6";
-import VegetableHomeSlider from "../Components/VegetablesDemo/VegetableHomeSlider";
-import FashionService from "../Components/FashionDemo/FashionService";
 import VegetableDeal from "../Components/VegetablesDemo/VegetableDeal";
 import FlowerSubscribe from "../Components/FlowerDemo/FlowerSubscribe";
-import ElectronicHurryUp from "../Components/ElectronicDemo/ElectronicHurryUp";
-import ElectronicVR from "../Components/ElectronicDemo/ElectronicVR";
-import FurnitureSlider from "../Components/FurnitureDemo/FurnitureSlider";
-import FashionShopByCategory from "../Components/FashionDemo/FashionShopByCategory";
+import dynamic from "next/dynamic";
+// import FurnitureSlider from "../Components/FurnitureDemo/FurnitureSlider";
+// import ElectronicVR from "../Components/ElectronicDemo/ElectronicVR";
+// import FashionShopByCategory from "../Components/FashionDemo/FashionShopByCategory";
+// import VegetableHomeSlider from "../Components/VegetablesDemo/VegetableHomeSlider";
+// import FashionService from "../Components/FashionDemo/FashionService";
+// import ElectronicHurryUp from "../Components/ElectronicDemo/ElectronicHurryUp";
+const ElectronicHurryUp = dynamic(() => import('../Components/ElectronicDemo/ElectronicHurryUp'))
+const FashionService = dynamic(() => import('../Components/FashionDemo/FashionService'))
+const VegetableHomeSlider = dynamic(() => import('../Components/VegetablesDemo/VegetableHomeSlider'))
+const FashionShopByCategory = dynamic(() => import('../Components/FashionDemo/FashionShopByCategory'))
+const ElectronicVR = dynamic(() => import('../Components/ElectronicDemo/ElectronicVR'))
+const FurnitureSlider = dynamic(() => import('../Components/FurnitureDemo/FurnitureSlider'))
+
 import {SortingByNameFunction, SortingByOrderFunction,} from "../Utils/sortingFunctions";
 import {useDispatch, useSelector} from "react-redux";
 
