@@ -36,7 +36,7 @@ const VegetablePoster = ({nav2, slider1, slider}) => {
                             }
 
                             <Image height="350" width="1400"
-                                   loading="lazy" alt={i}
+                                   loading={i !== 0 ? "lazy" : "eager"} alt={i}
                                    src={defImg === "" ? `${APIImage}/${el?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                    className="image-slider"
 

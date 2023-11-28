@@ -13,7 +13,7 @@ const ElectronicVR = ({productData, title, addToCart}) => {
 
     return (
         <section className="ratio_asos" >
-            <Container >
+            <Container fluid={true}>
                 <Row>
                     <Col>
                         <SectionHeader title={title ? title : NewArrival} subTitle={title ? title : NewArrival}/>

@@ -15,6 +15,7 @@ import NavBar from "../../Element/NavBar";
 import {APICallUrl} from "../../../Components/Constant";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
+import {selectLoginToken} from "../../../ReduxToolkit/Slices/LoginSlice";
 
 const Header5 = ({noStyle, mainMenu, defImg}) => {
 
@@ -22,6 +23,7 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
     const dispatch = useDispatch();
     const router = useRouter();
     const UpScroll = useHeaderScroll(false);
+    const loginToken = useSelector(selectLoginToken);
 
     const [onInputText, setOnInputText] = useState('');
 
@@ -38,7 +40,13 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
             const apiUrl = `${APICallUrl}/api/search-products?q=${searchQuery}&json=true`;
 
             try {
-                const response = await fetch(apiUrl);
+                const response = await fetch(apiUrl,{
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        Authorization: `Bearer ${loginToken.token || ""}`
+                    }
+                });
                 const data = await response.json();
                 setProductData(data?.products?.data);
                 setBrandsData(data?.brands);

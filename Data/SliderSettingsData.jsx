@@ -81,6 +81,7 @@ export const MainHomeSlider = {
     arrows: true,
     autoplay: true,
     fade: true,
+    lazyLoad: "ondemand",
     responsive: [
         {
             breakpoint: 1024,
@@ -409,7 +410,7 @@ export const VRSlider = {
     slidesToShow: 5,
     slidesToScroll: 1,
     speed: 500,
-
+    lazyLoad: "ondemand",
     // autoplay: true,
     responsive: [
         {
@@ -831,7 +832,7 @@ export const ThumbNavSlider = {
     dots: false,
     centerMode: true,
     focusOnSelect: true,
-    focus:true,
+    focus: true,
     vertical: true,
     centerPadding: 0,
     arrows: false,
