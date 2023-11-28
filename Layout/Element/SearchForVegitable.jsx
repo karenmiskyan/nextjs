@@ -1,11 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Search} from 'react-feather';
-import {useDispatch, useSelector} from 'react-redux';
-import {Input} from 'reactstrap';
-import {getAPIData} from '../../Utils';
+import {useDispatch} from 'react-redux';
 import SearchSuggestion from './SearchSuggestion';
-import {setShopProducts} from "../../ReduxToolkit/Slices/ShopProductsSlice";
-import {APICallUrl} from "../../Components/Constant";
 import {useRouter} from "next/router";
 
 const SearchForVegitable = ({
@@ -13,9 +9,8 @@ const SearchForVegitable = ({
                                 brandsData,
                                 categoriesData,
                                 Is_Focus,
-                                handleChange,
                                 onInputText,
-                                divRef, handleKeyPress,
+                                divRef,
                                 loading, setOnInputText, handleKeyUp
                             }) => {
     const router = useRouter();

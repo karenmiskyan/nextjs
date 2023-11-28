@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import {ShoppingBag, ShoppingCart} from 'react-feather';
 import {Col, Input, Media, Row} from 'reactstrap';
 import {useDispatch, useSelector} from 'react-redux';
-import {deleteProduct, getAPIData} from '../../Utils';
 import {APICallUrl,APIImage, CommonPath} from '../../Components/Constant';
 import {Btn} from '../../Components/AbstractElements';
 import TotalPrice from './TotalPrice';
@@ -10,7 +9,7 @@ import {toast} from 'react-toastify';
 import {selectAuth, selectLoginToken, toggleDivVisibility} from "../../ReduxToolkit/Slices/LoginSlice";
 import {
     selectCart, selectLoadingCart, selectLoadingDelete,
-    selectNewCartProduct, selectSellTotal,
+    selectNewCartProduct,
     selectTotal,
     setCart, setLoadingCart, setLoadingDelete,
     setNewCartProduct
@@ -148,25 +147,14 @@ const ItemCart = () => {
         let quantitySum = cart.length > 0 ? cart?.map(item => Number(item?.qty)).reduce((accumulator, currentValue) => accumulator + currentValue, 0) : []
         return (
             <li className={`onhover-dropdown cart-dropdown${isCartOpen ? " show" : ''}`}>
-                {/*<Btn*/}
-                {/*    attrBtn={{*/}
-                {/*      type: 'button',*/}
-                {/*      className: 'btn-solid-default btn-spacing',*/}
-                {/*      onClick: () => isOpen(),*/}
-                {/*    }}*/}
-                {/*>*/}
-                {/*  */}
-                {/*</Btn>*/}
+
                 <div className="cart-media" onClick={() => setIsCartOpen(true)}>
                     {
                         quantitySum.length !== 0 && <p className="qty">{quantitySum}</p>
                     }
 
                     <ShoppingCart/>
-                    {/*<span>*/}
-                    {/*  {symbol}*/}
-                    {/*  {(getTotalPrice() * currencyValue).toFixed(2)}*/}
-                    {/*</span>*/}
+
                 </div>
                 {
                     auth ? <BeforeSignInAccount isOpen={isOpen} divRef={divRef} setIsCartOpen={setIsCartOpen}/> :

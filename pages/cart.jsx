@@ -189,8 +189,9 @@ const Cart = ({data}) => {
                         <ProductCart loading={loading} zIndex={zIndex}/>
                     }
                 </PersistGate>
-                {data?.newArrival?.length > 0 &&
-                    <ElectronicVR productData={newArrival.length > 0 ? newArrival : data?.newArrival}/>}
+                {data?.newArrival?.products?.data?.length > 0 &&
+                    <ElectronicVR
+                        productData={newArrival?.products?.data?.length > 0 ? newArrival.products?.data : data?.newArrival?.products?.data}/>}
 
                 <FlowerSubscribe/>
                 {isLoading && (

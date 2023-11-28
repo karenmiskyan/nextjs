@@ -1,20 +1,8 @@
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {ShoppingCart, User} from 'react-feather';
-import {APICallUrl, Logins, Pleasefillthename, Registers} from '../../Components/Constant';
-import {firebase_app} from '../../Config/firebase';
-import {Input, Label} from "reactstrap";
 import React, {useEffect, useRef, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {
-    selectAuth, selectAuthUser,
-    // selectAuth,
-    selectLoginToken, selectOpenModal,
-    setAuth,
-    setLoginToken,
-    setUser,
-    signOut, toggleDivVisibility
-} from "../../ReduxToolkit/Slices/LoginSlice";
+import {useRouter} from 'next/router';
+import {User} from 'react-feather';
+import {useSelector} from "react-redux";
+import {selectAuth, selectOpenModal} from "../../ReduxToolkit/Slices/LoginSlice";
 import BeforeSignInAccount from "../../Components/Pages/UserDashboard/BeforeSignInAccount";
 import AfterSignInAccount from "../../Components/Pages/UserDashboard/AfterSignInAccount ";
 import useWindowDimensions from "../../Utils/useWindowDimensions";
@@ -32,7 +20,6 @@ const AdminUser = () => {
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (divRef.current && !divRef.current.contains(event.target)) {
-                // dispatch(toggleDivVisibility(false));
                 setIsCartOpen(false)
             }
         };
@@ -68,7 +55,6 @@ const AdminUser = () => {
     return (
         <li className={`onhover-dropdown account-dropbox cart-dropdown${isCartOpen ? !auth ? ' show-mobile' : " show" : ''}`}>
             <div className='cart-media become-partner'
-                // ref={divRef}
                  onClick={() => {
                      auth ? setIsCartOpen(true) :
                          router.push("/my-account/")

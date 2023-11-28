@@ -163,8 +163,9 @@ const Index = ({data}) => {
                 {Object.keys(data?.brands).length > 0 &&
                     <FurnitureSlider brands={SortingByNameFunction([...data?.brands?.data])}/>}
 
-                {data?.newArrival?.length > 0 &&
-                    <ElectronicVR productData={newArrival.length > 0 ? newArrival : data?.newArrival}/>}
+                {data?.newArrival?.products?.data?.length > 0 &&
+                    <ElectronicVR
+                        productData={newArrival?.products?.data?.length > 0 ? newArrival.products?.data : data?.newArrival?.products?.data}/>}
 
                 <FlowerSubscribe/>
                 {isLoading && (

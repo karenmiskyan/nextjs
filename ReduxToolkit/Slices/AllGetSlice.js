@@ -56,7 +56,7 @@ export const getNewArrival = createAsyncThunk(
     'GetAllSlice/getNewArrival',
     async (loginToken) => {
         // const response = await fetch(`${APICallUrl}/api/get-products-by-collection?collection=new-arrival`, {
-            const response = await fetch(`${APICallUrl}/item?json=true&per_page=40&new_products=true`, {
+            const response = await fetch(`${APICallUrl}/item?json=true&per_page=20&new_products=true`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json;charset=UTF-8",
@@ -125,7 +125,7 @@ export const GetAllSlice = createSlice({
             state.shopByCategory = action.payload;
         });
         builder.addCase(getNewArrival.fulfilled, (state, action) => {
-            state.newArrival = action.payload?.products?.data;
+            state.newArrival = action.payload;
         });
         builder.addCase(getNewOffer.fulfilled, (state, action) => {
             state.newOffer = action.payload;

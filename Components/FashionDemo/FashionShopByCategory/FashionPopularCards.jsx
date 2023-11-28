@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Col, Row} from 'reactstrap';
-import {APICallUrl,APIImage, CommonPath} from "../../Constant";
+import {APIImage} from "../../Constant";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -21,27 +21,22 @@ const FashionPopularCard = ({popularCard, defImg}) => {
                                     let indexOfFirstEl = indexOfLastEl - fixMaxCount;
                                     let currentEl = popularCard?.slice(indexOfFirstEl, indexOfLastEl)
 
-                                    // let value = countIndex + 1
 
                                     return (
                                         <Col
                                             className={`the-last-div `}
-
                                             key={countIndex}
-                                            xl='12'
-
-                                        >
+                                            xl='12'>
                                             <Row style={{gridGap: "28px 0"}}>
                                                 {currentEl.map((el, makeIndex) => {
 
-                                                      return (
+                                                    return (
                                                         <Col
                                                             className={`the-last-div-col ${lastDiv?.length - 1 !== countIndex ? "" : "res-div"}`}
                                                             value={makeIndex}
                                                             xl="2"
                                                             lg="4"
                                                             xs='6'
-                                                            // xs='12'
                                                             key={makeIndex + 1}>
                                                             <div className="category-shop-home">
                                                                 <div className='category-logos'>
@@ -49,21 +44,17 @@ const FashionPopularCard = ({popularCard, defImg}) => {
                                                                         href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}>
 
                                                                         <Image width="120" height="120"
-                                                                             loading="lazy"
-                                                                             src={defImg === "" ? `${APIImage}/${el?.image}` :
-                                                                                 "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                                               loading="lazy"
+                                                                               src={defImg === "" ? `${APIImage}/${el?.image}` :
+                                                                                   "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                                                             // src={`${APICallUrl}/storage/${el?.image}`}
-                                                                             alt={el.name} title={el?.name}/>
+                                                                               alt={el.name} title={el?.name}/>
                                                                     </Link>
 
                                                                 </div>
                                                                 <Link href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}>
                                                                     <h4>{el?.name}</h4>
                                                                 </Link>
-                                                                {/*{*/}
-                                                                {/*    // currentEl.length === 6*/}
-                                                                {/*    d.length-1 !==countIndex   ?*/}
-                                                                {/*        <div className="after-col-id"/> : ""}*/}
                                                             </div>
                                                         </Col>
                                                     )

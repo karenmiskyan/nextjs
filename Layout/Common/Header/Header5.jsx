@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Percent, RefreshCw} from 'react-feather';
 import {Col, Row} from 'reactstrap';
 import {useHeaderScroll} from '../../../Utils/HeaderScroll';
 import AllCategories from '../../Element/AllCategories';
@@ -8,30 +7,20 @@ import ItemCart from '../../Element/ItemCart';
 import SearchBarToggle from '../../Element/SearchBarToggle';
 import SearchBarWithBgColor from '../../Element/SearchBarWithBgColor';
 import SearchForVegitable from '../../Element/SearchForVegitable';
-import ThreeBarToggle from '../../Element/ThreeBarToggle';
 import TopHeaderBar2 from '../../Element/TopHeaderBar2';
-import WishList from '../../Element/WishList';
-import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
 import AdminUser from "../../Element/AdminUser";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Log from '../../../public/assets/images/Vector.png'
 import {PersistGate} from "redux-persist/integration/react";
 import {persistor} from "../../../ReduxToolkit/store";
 import NavBar from "../../Element/NavBar";
 import {APICallUrl} from "../../../Components/Constant";
 import {useDispatch, useSelector} from "react-redux";
-import {selectLoginToken} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {useRouter} from "next/router";
-import {setLoading, setPerPage, setResetAll, setShopCategory} from "../../../ReduxToolkit/Slices/ShopProductsSlice";
 
 const Header5 = ({noStyle, mainMenu, defImg}) => {
-    // const {Is_Search} = useSelector((state) => state.CommonReducer);
+
     const {Is_Focus, Is_Search} = useSelector((state) => state.CommonReducer);
-    const loginToken = useSelector(selectLoginToken);
     const dispatch = useDispatch();
     const router = useRouter();
-
-    const [isOpen, setIsOpen] = useState(false);
     const UpScroll = useHeaderScroll(false);
 
     const [onInputText, setOnInputText] = useState('');
@@ -41,33 +30,6 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
     const [productData, setProductData] = useState([]);
     const divRef = useRef();
     const [loading, setLoading] = useState(true);
-    // const handleChange = async (e) => {
-    //     setLoading(true)
-    //     const inputValue = e.target.value;
-    //     dispatch({type: 'IS_FOCUS', payload: true}); // Make sure 'IS_FOCUS' is defined in the reducer
-    //     if (inputValue.length > 1) {
-    //         try {
-    //             const response = await fetch(`${APICallUrl}/api/search-products?q=${inputValue}&json=true`, {
-    //                 method: 'GET',
-    //                 headers: {
-    //                     "Content-Type": "application/json;charset=UTF-8",
-    //                     Authorization: `Bearer ${loginToken.token}`
-    //                 }
-    //             });
-    //             const data = await response.json();
-
-    //             setProductData(data?.products?.data);
-    //             setBrandsData(data?.brands);
-    //             setCategoriesData(data?.categories);
-    //             setLoading(false);
-    //
-    //         } catch (error) {
-    //             console.error(error);
-    //             setLoading(false);
-    //         }
-    //     }
-    // };
-
 
     const [timer, setTimer] = useState(null);
 
@@ -81,7 +43,7 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
                 setProductData(data?.products?.data);
                 setBrandsData(data?.brands);
                 setCategoriesData(data?.categories);
-                // Handle data as needed
+
             } catch (error) {
                 console.error('Error making API call:', error);
             }
@@ -90,23 +52,18 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
 
     const handleKeyUp = () => {
         dispatch({type: 'IS_FOCUS', payload: true});
-
-        // Clear the existing timer
         if (timer) {
             clearTimeout(timer);
         }
-
-        // Set a new timer to wait for user to stop typing
         setTimer(
             setTimeout(() => {
-                // Make API call after a delay
+
                 makeAPICall(onInputText);
-            }, 500) // Set the delay as needed
+            }, 500)
         );
     };
 
     useEffect(() => {
-        // Clear the timer when the component unmounts
         return () => {
             if (timer) {
                 clearTimeout(timer);
@@ -158,7 +115,6 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
                                     </div>
                                     <SearchForVegitable productData={productData} brandsData={brandsData}
                                                         categoriesData={categoriesData} Is_Focus={Is_Focus}
-                                        // handleChange={handleChange}
                                                         onInputText={onInputText}
                                                         divRef={divRef} loading={loading}
                                                         handleKeyPress={handleKeyPress}
@@ -168,15 +124,13 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
                                         <SearchBarToggle productData={productData} brandsData={brandsData}
                                                          setOnInputText={setOnInputText}
                                                          categoriesData={categoriesData} Is_Focus={Is_Focus}
-                                            // handleChange={handleChange}
                                                          onInputText={onInputText}
                                                          handleKeyUp={handleKeyUp}
                                                          handleKeyPress={handleKeyPress}
                                                          Is_Search={Is_Search} loading={loading}/>
                                         <SearchBarWithBgColor customeClass={'d-lg-none d-block'}/>
                                         {Is_Search &&
-                                            <div className="overlay"/>} {/* Add overlay when Is_Search is true */}
-
+                                            <div className="overlay"/>}
                                     </div>
                                 </div>
                             </Col>
@@ -209,7 +163,6 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
                                             {/*  </div>*/}
                                             {/*</li>*/}
 
-
                                             {/*<li className='onhover-dropdown account-dropbox'>*/}
                                             {/*    <div className='cart-media'>*/}
                                             {/*        <img className="percent-image"*/}
@@ -225,7 +178,6 @@ const Header5 = ({noStyle, mainMenu, defImg}) => {
                                                 <AllCategories/>
                                                 <AdminUser/>
                                                 <ItemCart/>
-
                                             </PersistGate>
                                         </ul>
                                     </div>

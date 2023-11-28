@@ -1,7 +1,6 @@
 import {Container, Row} from 'reactstrap';
 import MainFooter from './MainFooter';
 import SubFooter from './SubFooter';
-import RightFooter from './SubFooter/RightFooter';
 
 const Footers = ({QuestionTab, data, footerLeft, footerCenter, footerRight, defImg}) => {
     return (

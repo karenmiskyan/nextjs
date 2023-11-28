@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import VegeLeftContain from './VegeLeftContain';
-import VegetableNav from './VegetableNav';
 import VegetablePoster from './VegetablePoster';
 const VegetableHomeSlider = ({ slider }) => {
   const [state, setState] = useState({ nav1: null, nav2: null });

@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import {Input, Label} from "reactstrap";
-import {APICallUrl, Pleasefillthename} from "../../Constant";
+import {APICallUrl} from "../../Constant";
 import {
-    selectAuth,
-    selectLoginToken,
     setAuth,
     setLoginToken,
-    setUser,
-    signOut
+    setUser
 } from "../../../ReduxToolkit/Slices/LoginSlice";
 import {useRouter} from "next/router";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import * as Yup from "yup";
 import {useFormik} from "formik";
 import Link from "next/link";
@@ -20,9 +17,7 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
 
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    let auth = useSelector(selectAuth);
-
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const [showPassword, setShowPassword] = useState(false);
     const [err, setErr] = useState("");
@@ -59,7 +54,6 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
 
                 })
                     .catch((error) => {
-                        // Handle error if the second fetch fails
                         console.error('Failed to fetch user data:', error);
                         setLoading(false);
                     });
@@ -67,8 +61,8 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                 // Handle error if the first fetch returns an error
                 console.error('Login failed:', res.message);
 
-                    setErr(res)
-                    setLoading(false);
+                setErr(res)
+                setLoading(false);
 
             }
         })
@@ -101,7 +95,6 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
     })
 
 
-
     return (
         <div className='login profile-dropdown' ref={divRef}>
             {
@@ -124,12 +117,7 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                         marginBottom: "0"
                     } : {marginBottom: "0"}}>Use Your email address & password to login</p>
                 </div>
-                {/*<div className="my-orders-section-filter">*/}
-                {/*    <h5>PO Number, Order #, Reference #</h5>*/}
-                {/*    <input type='text' className='form-control checkout-form' name='POnumber'*/}
-                {/*           style={{fontSize: "14px", borderColor: "#ced4da"}}*/}
-                {/*           placeholder='Enter Number Here...'/>*/}
-                {/*</div>*/}
+
                 <form>
                     <h5 style={{marginBottom: "6px"}}>Email</h5>
                     <Input type='email' placeholder='Email' name='email'
@@ -137,7 +125,7 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                         // onChange={(e) => setEmail(e.target.value)}
                         // value={email}
                            value={formik.values.email}
-                           onChange={(e)=>{
+                           onChange={(e) => {
                                formik.handleChange(e)
                                setErr("")
                            }}
@@ -150,20 +138,16 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                             fontSize: "14px"
                         }}>{formik.errors.email}</span>
                     )}
-                    {/*<span className='spin'></span>*/}
-                    {/*<div className='valid-feedback'>{Pleasefillthename}</div>*/}
                     <h5 style={{marginTop: "12px", marginBottom: "6px"}}>Password</h5>
                     <div className='password-input-container'>
                         <Input type={showPassword ? 'text' : 'password'} name='password' placeholder='Password'
                                className='checkout-form login-form'
-                            // onChange={(e) => setPassword(e.target.value)}
                                value={formik.values.password}
-                               onChange={(e)=>{
+                               onChange={(e) => {
                                    formik.handleChange(e)
                                    setErr("")
                                }}
                                onBlur={formik.handleBlur}
-                            // value={password} onChange={(e) => setPassword(e.target.value)}
                         />
                         <div
                             className={`password-toggle-icon ${showPassword ? 'show' : ''}`}
@@ -183,7 +167,6 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                             fontSize: "14px"
                         }}>{formik.errors.password}</span>
                     )}
-                    {/*<span className='spin'></span>*/}
                 </form>
 
                 <div className='form-check p-0 custome-form-check'>
@@ -191,7 +174,7 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                            type='checkbox' style={{top: "-4px"}}/>
                     <Label className='form-check-label'
                            style={{marginBottom: "0"}}>Remember me</Label>
-                    {/*<p className='font-light'>(25)</p>*/}
+
                 </div>
                 {err.error && (
                     <span
@@ -202,10 +185,9 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                         style={{color: 'var(--theme-color)', fontWeight: "500", fontSize: "14px"}}>{err.message}</span>
                 )}
                 <div className='product-buttons' style={{marginBottom: "0"}}>
-                    {/*<ProductWishListAction singleProduct={singleProduct} />*/}
                     <a id='cartEffect' onClick={() => signIN()}
                        className='btn btn-solid hover-solid btn-animation quick-order-button'>
-                        {/*<i className='fa fa-shopping-cart'></i>*/}
+
                         <span>SIGN IN</span>
                     </a>
                 </div>
@@ -240,39 +222,10 @@ const BeforeSignInAccount = ({isOpen, divRef, setIsCartOpen, signIn}) => {
                     </Link>
                 </div>
             </div>
-            {/*<ul>*/
-            }
-            {/*    <li>*/
-            }
-            {/*        <Link href={'/page/login'} className='d-block'>*/
-            }
-            {/*            {Logins}*/
-            }
-            {/*        </Link>*/
-            }
-            {/*    </li>*/
-            }
-            {/*    <li>*/
-            }
-            {/*        <Link href={'/page/register'} className='d-block'>*/
-            }
-            {/*            {Registers}*/
-            }
-            {/*        </Link>*/
-            }
-            {/*    </li>*/
-            }
-            {/*    <li onClick={() => firebaseLogout()} className='d-block'>*/
-            }
-            {/*        {'Logout'}*/
-            }
-            {/*    </li>*/
-            }
-            {/*</ul>*/
-            }
+
             {loading && (
                 <Backdrop sx={{
-                    position:"absolute",
+                    position: "absolute",
                     color: '#fff',
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                     backgroundColor: "rgba(255, 255, 255, 0.3)"

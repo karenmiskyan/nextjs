@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {selectLoginToken} from "../ReduxToolkit/Slices/LoginSlice";
+import { useSelector} from "react-redux";
 import {
     getBrands, getFooterCenter, getFooterLeft, getFooterRight,
     getMainMenu,
@@ -11,17 +10,8 @@ import {
     selectSpecialOffer
 } from "../ReduxToolkit/Slices/AllGetSlice";
 import {useRouter} from "next/router";
-import useWindowDimensions from "../Utils/useWindowDimensions";
 import Head from "next/head";
 import Layout6 from "../Layout/Layout6";
-import VegetableHomeSlider from "../Components/VegetablesDemo/VegetableHomeSlider";
-import FashionService from "../Components/FashionDemo/FashionService";
-import ElectronicHurryUp from "../Components/ElectronicDemo/ElectronicHurryUp";
-import FashionShopByCategory from "../Components/FashionDemo/FashionShopByCategory";
-import ElectronicVR from "../Components/ElectronicDemo/ElectronicVR";
-import FurnitureSlider from "../Components/FurnitureDemo/FurnitureSlider";
-import {SortingByNameFunction} from "../Utils/sortingFunctions";
-import FlowerSubscribe from "../Components/FlowerDemo/FlowerSubscribe";
 import {Backdrop, CircularProgress} from "@mui/material";
 import CommonMobileView from "../Components/Element/CommonMobileView";
 import {PersistGate} from "redux-persist/integration/react";

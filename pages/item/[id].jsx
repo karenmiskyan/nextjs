@@ -316,9 +316,10 @@ const Product = ({data}) => {
                             <ElectronicHurryUp
                                 tabSection={specialOffer.length > 0 ? specialOffer : data?.specialOffer}/>}
 
+                        {data?.newArrival?.products?.data?.length > 0 &&
+                            <ElectronicVR
+                                productData={newArrival?.products?.data?.length > 0 ? newArrival.products?.data : data?.newArrival?.products?.data}/>}
 
-                        {data?.newArrival?.length > 0 &&
-                            <ElectronicVR productData={newArrival.length > 0 ? newArrival : data?.newArrival}/>}
 
                         <FlowerSubscribe/>
                     </> : <SectionSvg/>

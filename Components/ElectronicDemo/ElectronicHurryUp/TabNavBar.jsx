@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {Nav, NavItem, NavLink} from 'reactstrap';
 import TabpanSection from '../../FurnitureDemo/FurnitureTabSection/TabpanSection';
-import {useSelector} from "react-redux";
-import {selectAuth} from "../../../ReduxToolkit/Slices/LoginSlice";
 
 const TabNavBar = ({TabFilter, defImg}) => {
     const [activeTab, setActiveTab] = useState(0);

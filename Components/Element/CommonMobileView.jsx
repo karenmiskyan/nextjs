@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import {AlignJustify, Heart, Home, ShoppingBag, User} from 'react-feather';
-import {useDispatch, useSelector} from 'react-redux';
-import {Account, Cart, Category, Homes, wishlist} from '../Constant';
+import {useSelector} from 'react-redux';
+import {Account, Cart, Homes} from '../Constant';
 import {selectAuth} from "../../ReduxToolkit/Slices/LoginSlice";
 import {selectCart} from "../../ReduxToolkit/Slices/CartSlice";
 import {useRouter} from "next/router";
@@ -10,15 +10,9 @@ import {persistor} from "../../ReduxToolkit/store";
 import {PersistGate} from "redux-persist/integration/react";
 
 const CommonMobileView = () => {
-    const dispatch = useDispatch();
     const router = useRouter()
     const auth = useSelector(selectAuth);
     const cart = useSelector(selectCart);
-
-    // const toggleModal = () => {
-    //   dispatch({ type: 'OVERLAY' });
-    //   dispatch({ type: 'CATEGORYRESPONSIVE' });
-    // };
 
     const quantitySum = cart.length > 0 ? cart?.map(item => Number(item?.qty > item.product.quantity && item.product.quantity !== 0 ? item.product.quantity : item?.qty)).reduce((accumulator, currentValue) => accumulator + currentValue, 0) : []
 
@@ -31,9 +25,7 @@ const CommonMobileView = () => {
                         <span>{Homes}</span>
                     </Link>
                 </li>
-                <li
-                    // onClick={() => toggleModal()}
-                    className='toggle-category'>
+                <li className='toggle-category'>
                     <Link href='/shop' className={`${router.asPath === "/shop/" ? "active" : ""}`}>
                         <AlignJustify/>
                         <span>Shop</span>

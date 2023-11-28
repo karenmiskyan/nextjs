@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {Col} from 'reactstrap';
 import {CommonPath, Weaccept} from '../../../../Components/Constant';
 import Image from "next/image";

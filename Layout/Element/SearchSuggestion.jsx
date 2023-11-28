@@ -1,20 +1,17 @@
-import {useRouter} from 'next/router';
-import React, {Fragment} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Col, Media, Row} from 'reactstrap';
-import {APICallUrl,APIImage, CommonPath} from '../../Components/Constant';
-import DynamicRating from '../../Components/Element/DynamicRating';
+import {APIImage} from '../../Components/Constant';
 import NoProductFound from './NoProductFound';
 import Link from "next/link";
 import {selectAuth} from "../../ReduxToolkit/Slices/LoginSlice";
 import {persistor} from "../../ReduxToolkit/store";
 import {PersistGate} from "redux-persist/integration/react";
-import {Skeleton} from "@mui/material";
+import Image from "next/image";
 
-const SearchSuggestion = ({productData, categoriesData, brandsData, Is_Focus, onInputText, loading}) => {
+const SearchSuggestion = ({productData, categoriesData, brandsData, onInputText, loading}) => {
 
     let auth = useSelector(selectAuth);
-    const {symbol, currencyValue} = useSelector((state) => state.CurrencyReducer);
     let dispatch = useDispatch()
 
     function escapeRegExp(string) {
@@ -26,9 +23,7 @@ const SearchSuggestion = ({productData, categoriesData, brandsData, Is_Focus, on
     return (
         <>
             {(productData?.length > 0 || categoriesData?.length > 0 || brandsData?.length > 0) && onInputText.length > 1 ? (
-                <div className='search-suggestion search-suggestion-2'
-                    // ref={divRef}
-                >
+                <div className='search-suggestion search-suggestion-2'>
                     <Row className='g-3' style={{
                         overflowY: window.innerWidth < 576 ? "scroll" : "",
                         height: window.innerWidth < 576 ? "calc(100vh - 100px)" : ""
@@ -51,22 +46,22 @@ const SearchSuggestion = ({productData, categoriesData, brandsData, Is_Focus, on
                                         //             <Skeleton height={30} style={{width: "75%"}}/>
                                         //         </>
                                         //         :
-                                                brandsData?.map((el, i) => {
-                                                    return (
-                                                        <Link key={i} onClick={() => dispatch({
-                                                            type: 'IS_FOCUS',
-                                                            payload: false
-                                                        })}
-                                                              href={`/${el?.slugable?.prefix}/${el?.slugable?.key}`}>
-                                                            <h4 dangerouslySetInnerHTML={{
-                                                                __html: el?.name?.replace(
-                                                                    new RegExp(`(${escapedInput})`, 'gi'),
-                                                                    "<span style='color: var(--theme-color)'>$1</span>"
-                                                                )
-                                                            }}/>
-                                                        </Link>
-                                                    )
-                                                })
+                                        brandsData?.map((el, i) => {
+                                            return (
+                                                <Link key={i} onClick={() => dispatch({
+                                                    type: 'IS_FOCUS',
+                                                    payload: false
+                                                })}
+                                                      href={`/${el?.slugable?.prefix}/${el?.slugable?.key}`}>
+                                                    <h4 dangerouslySetInnerHTML={{
+                                                        __html: el?.name?.replace(
+                                                            new RegExp(`(${escapedInput})`, 'gi'),
+                                                            "<span style='color: var(--theme-color)'>$1</span>"
+                                                        )
+                                                    }}/>
+                                                </Link>
+                                            )
+                                        })
                                         // )
 
                                     }
@@ -133,10 +128,11 @@ const SearchSuggestion = ({productData, categoriesData, brandsData, Is_Focus, on
                                                             href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}>
                                                             <div className='media-image'>
                                                                 {/*{elem?.images.slice(0, 1).map((img, i) => (*/}
-                                                                <img
-                                                                    src={`${APIImage}/${elem.image}`}
-                                                                    className='img-fluid' title={elem?.name}
-                                                                    alt={elem?.name} key={i}/>
+                                                                <Image width="100" height="100"
+                                                                       loading="lazy"
+                                                                       src={`${APIImage}/${elem.image}`}
+                                                                       className='img-fluid' title={elem?.name}
+                                                                       alt={elem?.name} key={i}/>
                                                             </div>
                                                         </Link>
                                                         <div>

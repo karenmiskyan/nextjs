@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Col} from 'reactstrap';
-import {APICallUrl,APIImage} from '../../Constant';
+import {APIImage} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
 import {selectAuth} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {PersistGate} from "redux-persist/integration/react";
@@ -38,16 +38,13 @@ const MiddleTab = ({elem, LeftRightTab, defImg, isProductNew}) => {
                                     backgroundColor: "#5C5CFF",
                                     marginRight: "4px"
                                 }}>New</span>}
-                            {/*<Link href={'/page/wishlist'} className='heart-wishlist wishlist'>*/}
-                            {/*  <i className='far fa-heart'></i>*/}
-                            {/*</Link>*/}
                         </div>
 
                         <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}>
                             <Image width="310" height="310"
                                 // src={`${APICallUrl}/storage/${elem?.image}`}
                                  loading="lazy"
-                                 src={defImg === "" ? `${APIImage}/storage/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                 src={defImg === "" ? `${APIImage}/${elem?.image}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
                                  className='img-fluid' alt={elem?.name}
                                  title={elem?.name}/>
                         </Link>

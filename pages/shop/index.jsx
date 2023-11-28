@@ -159,16 +159,13 @@ const Shop = ({data}) => {
     useEffect(() => {
 
         const handleStart = (url) => {
-            // if (router.asPath !== url) {
-            //     setIsLoading(true);
-            // }
 
             const basePath = url.split("&")[0];
-            // if (router.asPath !== url) {
-            //     setIsLoading(true);
-            // }
 
-            if (`/shop/?s=${router?.query?.s}` !== basePath) {
+            const normalizedBasePath = decodeURIComponent(basePath);
+            const normalizedRouterQueryS = decodeURIComponent(`/shop/?s=${router?.query?.s}`);
+
+            if (normalizedRouterQueryS !== normalizedBasePath) {
                 setIsLoading(true);
                 dispatch(setFirst(false));
                 dispatch(setShopCategory({}));
@@ -206,7 +203,7 @@ const Shop = ({data}) => {
             <Layout6 mainMenu={data?.mainMenu[0]} footerLeft={data?.footerLeft} footerCenter={data?.footerCenter}
                      footerRight={data?.footerRight}>
 
-                {data?.search?.query !== "UNDEFINED" ?
+                {data?.search?.query?.toUpperCase() !== "UNDEFINED" ?
                     Object.keys(shopCategory).length !== 0 &&
                     <>
                         <BreadCrumb slug={"shop"} parent={[{
@@ -229,15 +226,16 @@ const Shop = ({data}) => {
                 {Object.keys(data?.brands).length > 0 &&
                     <FurnitureSlider brands={SortingByNameFunction([...data?.brands?.data])}/>}
 
-                {Object.keys(data?.newOffer).length > 0 &&
-                    <VegetableDeal newOffer={SortingByOrderFunction([...data?.newOffer?.data])}/>}
+                {/*{Object.keys(data?.newOffer).length > 0 &&*/}
+                {/*    <VegetableDeal newOffer={SortingByOrderFunction([...data?.newOffer?.data])}/>}*/}
 
                 {data?.specialOffer?.length > 0 &&
                     <ElectronicHurryUp tabSection={specialOffer.length > 0 ? specialOffer : data?.specialOffer}/>}
 
 
-                {data?.newArrival?.length > 0 &&
-                    <ElectronicVR productData={newArrival.length > 0 ? newArrival : data?.newArrival}/>}
+                {data?.newArrival?.products?.data?.length > 0 &&
+                    <ElectronicVR
+                        productData={newArrival?.products?.data?.length > 0 ? newArrival.products?.data : data?.newArrival?.products?.data}/>}
 
                 {isLoading && (
                     <Backdrop sx={{

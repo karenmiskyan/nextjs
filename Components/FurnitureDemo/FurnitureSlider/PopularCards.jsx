@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Row} from 'reactstrap';
-import {APICallUrl, APIImage, CommonPath, ShopNow} from "../../Constant";
+import {APIImage, ShopNow} from "../../Constant";
 import {Btn} from "../../AbstractElements";
 import {SortingByOrderFunction} from "../../../Utils/sortingFunctions";
 import {useRouter} from "next/router";
@@ -24,13 +24,7 @@ const PopularCard = ({brands, defImg}) => {
                                    alt={brand?.alt} title={brand?.title}
                                    style={{margin: "30px 0 20px", maxWidth: "170px", width: "100%", objectFit: "contain"}}/>
                         </Link>
-                        {/*<Link href={`${brand?.slugable?.prefix}/${brand?.slugable?.key}`}>*/}
-                        {/*    <h2 style={{color: "black"}}>NEW BRANDS BY {brand?.name}</h2>*/}
-                        {/*</Link>*/}
                         <div dangerouslySetInnerHTML={{__html: brand?.short_description}}/>
-                        {/*<div className="product-slider-div">*/}
-                        {/*    <p className="product-slider-p">at KOA</p>*/}
-                        {/*</div>*/}
 
                         <Image src={`${APIImage}/${brand?.img_src}`}
                                loading="lazy" width="380" height="214"
@@ -58,7 +52,6 @@ const PopularCard = ({brands, defImg}) => {
                                 let indexOfFirstEl = indexOfLastEl - fixMaxCount;
                                 let currentEl = otherBrands.slice(indexOfFirstEl, indexOfLastEl)
 
-
                                 return (
                                     <Col key={countIndex} lg='12'>
                                         <Row className="row-top-brand-logos">
@@ -70,16 +63,14 @@ const PopularCard = ({brands, defImg}) => {
                                                                 <Link
                                                                     href={`${el?.slugable?.prefix}/${el?.slugable?.key}`}>
                                                                     <Image height="60" width="200" loading="lazy"
-                                                                         src={defImg === "" ? `${APIImage}/${el?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
-                                                                         alt={el?.alt} title={el?.title}
+                                                                           src={defImg === "" ? `${APIImage}/${el?.logo}` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+                                                                           alt={el?.alt} title={el?.title}
                                                                     />
                                                                 </Link>
                                                             </div>
                                                         </Col>
-
                                                     )
-                                                })
-                                            }
+                                                })}
                                         </Row>
 
                                     </Col>

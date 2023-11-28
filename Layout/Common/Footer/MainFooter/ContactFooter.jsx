@@ -1,5 +1,5 @@
 import { Col } from 'reactstrap';
-import { Address, Email, phone, mobileno, ActualAddress, CommonPath } from '../../../../Components/Constant';
+import { Address, Email, phone, mobileno, ActualAddress } from '../../../../Components/Constant';
 import { LogoSvg } from '../../../../Data/SVG';
 import Link from "next/link";
 
@@ -11,7 +11,6 @@ const ContactFooter = ({defImg}) => {
           <div className='brand-logo'>
             <Link href='/' className='footer-logo'>
               <LogoSvg  defImg={defImg} />
-              {/*<img src={`${CommonPath}/logo.png`} className='img-fluid' alt='logo' />*/}
             </Link>
           </div>
           <ul className='contact-lists'>

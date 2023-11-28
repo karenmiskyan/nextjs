@@ -1,18 +1,13 @@
 import React from 'react';
 import {signOut} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {useDispatch} from "react-redux";
-import Link from 'next/link';
 import {useRouter} from "next/router";
-import useWindowDimensions from "../../../Utils/useWindowDimensions";
 
 const AfterSignInAccount = ({isOpen, divRef}) => {
     let dispatch = useDispatch();
     let router = useRouter();
     return (
-        <div className='onhover-div profile-dropdown'
-            // style={{minWidth: "300px"}}
-             ref={divRef}
-        >
+        <div className='onhover-div profile-dropdown' ref={divRef}>
                    <span className="d-md-none d-block" style={{textAlign: "end", cursor: "pointer"}}
                          onClick={() => isOpen()}
                    >

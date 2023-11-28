@@ -3,9 +3,8 @@ import React, {Fragment} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Slider from 'react-slick';
 import {VRSlider} from '../../../Data/SliderSettingsData';
-import {APICallUrl, APIImage, CommonPath, NEW} from '../../Constant';
+import {APICallUrl, APIImage} from '../../Constant';
 import DynamicRating from '../../Element/DynamicRating';
-import {Btn} from "../../AbstractElements";
 import {selectAuth, selectLoginToken, toggleDivVisibility} from "../../../ReduxToolkit/Slices/LoginSlice";
 import {useRouter} from "next/router";
 import {Button} from "reactstrap";
@@ -60,7 +59,6 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                 }
             })
                 .catch((error) => {
-                    // Handle general fetch error
                     console.error('Failed to Add to cart', error);
                 });
 
@@ -69,22 +67,20 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
             const currentDate = new Date();
             const creationDate = new Date(creationDateStr);
 
-            const twoMonthsInMilliseconds = 2 * 30 * 24 * 60 * 60 * 1000;  // Assuming an average of 30 days in a month
+            const twoMonthsInMilliseconds = 2 * 30 * 24 * 60 * 60 * 1000;
 
             return currentDate - creationDate <= twoMonthsInMilliseconds;
         }
 
+
         return (
-            <div className={`slide-7 product-style-1 product-wrapper`}
+            <div className="slide-7 product-style-1 product-wrapper row"
                  style={{padding: "0 calc(40px + (50 - 10) * ((100vw - 320px) / (1920 - 320))) 0"}}
             >
                 <Slider {...VRSlider}>
                     {FilterVrProduct?.map((elem, i) => {
-
-
                         return (
                             <Fragment key={i}>
-                                {/*{elem.id === 'vr' && (*/}
                                 <div>
                                     <div className='product-box'>
                                         <div className='img-wrapper'>
@@ -102,9 +98,7 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                                         backgroundColor: "#5C5CFF",
                                                         marginRight: "4px"
                                                     }}>New</span>}
-                                                {/*<Link href={'/page/wishlist'} className='heart-wishlist wishlist'>*/}
-                                                {/*  <i className='far fa-heart'></i>*/}
-                                                {/*</Link>*/}
+
                                             </div>
                                             <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}
                                                   className='text-center'>
@@ -169,9 +163,6 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
 
                                         </div>
                                         <div style={{textAlign: "center", margin: "20px 0 0"}} className="product-buttons">
-                                            {/*<Btn attrBtn={{className: "m-1 btn-solid-default btn-sm"}}>*/}
-                                            {/*    Buy Now*/}
-                                            {/*</Btn>*/}
                                             <PersistGate loading={null} persistor={persistor}>
                                                 {
                                                     !auth ?
@@ -179,12 +170,11 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
                                                             <Button onClick={() => AddToCart(elem.id)}
                                                                     style={{border: "none"}}
                                                                     className='btn btn-solid hover-solid btn-animation'>
-                                                                {/*<i className='fa fa-shopping-cart'></i>*/}
                                                                 <span>Add to Cart</span>
                                                             </Button> :
                                                             <Link href={`/${elem?.slugable?.prefix}/${elem?.slugable?.key}`}
                                                                   className='btn btn-solid hover-solid btn-animation'>
-                                                                {/*<i className='fa fa-shopping-cart'></i>*/}
+
                                                                 <span>Buy Now</span>
                                                             </Link> : <div
                                                             onClick={toLogin}
@@ -197,7 +187,6 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
 
                                     </div>
                                 </div>
-                                {/*)}*/}
                             </Fragment>
                         );
                     })}
