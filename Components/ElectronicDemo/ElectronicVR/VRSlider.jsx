@@ -74,7 +74,6 @@ const VRSliders = ({FilterVrProduct, addToCart, defImg}) => {
             return currentDate - creationDate <= twoMonthsInMilliseconds;
         }
 
-
         return (
             <div className={`slide-7 product-style-1 product-wrapper`}
                  style={{padding: "0 calc(40px + (50 - 10) * ((100vw - 320px) / (1920 - 320))) 0"}}

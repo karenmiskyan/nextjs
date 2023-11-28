@@ -193,7 +193,7 @@ const Shop = ({data}) => {
             router.events.off('routeChangeComplete', handleComplete);
             router.events.off('routeChangeError', handleComplete);
         };
-    }, []);
+    }, [router]);
     const listGrid = true;
     return (
         <>

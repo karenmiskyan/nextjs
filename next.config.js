@@ -20,7 +20,7 @@ module.exports = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'd13hhdx1yjmha3.cloudfront.net',
+                hostname: 'api.koaedi.com',
             },
         ],
     },

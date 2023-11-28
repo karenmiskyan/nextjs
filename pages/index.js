@@ -217,7 +217,7 @@ export default function Home({data}) {
     }, []);
 
     const {width} = useWindowDimensions();
-
+    console.log(data.newArrival)
     return (
         <>
             <Head>
